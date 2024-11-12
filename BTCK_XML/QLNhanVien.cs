@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BTCK_XML
 {
-    public partial class Form1 : Form
+    public partial class QLNhanVien : Form
     {
-        public Form1()
+        public QLNhanVien()
         {
             InitializeComponent();
         }
