@@ -84,6 +84,12 @@
     <Compile Include="QLTaiKhoan.Designer.cs">
       <DependentUpon>QLTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLiGauBong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiGauBong.Designer.cs">
+      <DependentUpon>QuanLiGauBong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="TimKiemKH.cs">
       <SubType>Form</SubType>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLTaiKhoan.resx">
       <DependentUpon>QLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiGauBong.resx">
+      <DependentUpon>QuanLiGauBong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimKiemKH.resx">
       <DependentUpon>TimKiemKH.cs</DependentUpon>
