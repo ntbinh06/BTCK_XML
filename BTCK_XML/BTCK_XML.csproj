@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <Compile Include="TimKiemKH.Designer.cs">
       <DependentUpon>TimKiemKH.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DSHoaDon.resx">
       <DependentUpon>DSHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +134,7 @@
     <Content Include="image\icons8-delete-25.png" />
     <Content Include="image\icons8-exit-25.png" />
     <Content Include="image\icons8-pencil-25.png" />
+    <None Include="Resources\loGin.png" />
     <None Include="Resources\icons8-search-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
