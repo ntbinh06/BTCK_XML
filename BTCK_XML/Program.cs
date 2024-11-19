@@ -8,7 +8,7 @@ namespace BTCK_XML
 {
     internal static class Program
     {
-        ///Helooo
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
