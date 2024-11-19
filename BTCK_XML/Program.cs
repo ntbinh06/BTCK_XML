@@ -8,6 +8,7 @@ namespace BTCK_XML
 {
     internal static class Program
     {
+        ///Helooo
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,7 @@ namespace BTCK_XML
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DSHoaDon());
+            Application.Run(new TimKiemKH());
         }
     }
 }
