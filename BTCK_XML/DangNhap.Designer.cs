@@ -98,9 +98,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(530, 276);
+            this.button2.Location = new System.Drawing.Point(536, 276);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 43);
+            this.button2.Size = new System.Drawing.Size(116, 43);
             this.button2.TabIndex = 6;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
