@@ -26,5 +26,10 @@ namespace BTCK_XML
         {
 
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
