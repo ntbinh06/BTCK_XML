@@ -8,8 +8,7 @@ namespace BTCK_XML
 {
     internal static class Program
     {
-        
-        /// <summary>
+        ///thao
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
