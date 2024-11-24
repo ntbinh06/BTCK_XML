@@ -18,7 +18,7 @@ namespace BTCK_XML
     public partial class QLNhanVien : Form
     {
         private TaoXML taoXML = new TaoXML();
-        private string fileXML = Path.Combine("E:\\BaiTap\\BT xml\\BTCK_XML", "nhanvien.xml");
+        private string fileXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "nhanvien.xml");
 
         public QLNhanVien()
         {
@@ -230,7 +230,15 @@ namespace BTCK_XML
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

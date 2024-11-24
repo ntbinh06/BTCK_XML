@@ -161,6 +161,7 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dtpNgaysinh
             // 
@@ -267,6 +268,7 @@
             this.label1.Size = new System.Drawing.Size(308, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Quản lý nhân viên";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // QLNhanVien
             // 

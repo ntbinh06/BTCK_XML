@@ -41,5 +41,11 @@ namespace BTCK_XML
         {
 
         }
+
+        private void bearCute_Click(object sender, EventArgs e)
+        {
+            QuanLiGauBong quanLiGauBongForm = new QuanLiGauBong();
+            quanLiGauBongForm.Show();
+        }
     }
 }

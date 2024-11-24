@@ -17,9 +17,9 @@ namespace BTCK_XML
 {
     public partial class DSHoaDon : Form
     {
-        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
-        private string fileXML = Path.Combine("E:\\BaiTap\\BT xml\\BTCK_XML", "hoadon.xml");
+        private string fileXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "hoadon.xml");
 
         public DSHoaDon()
         {
@@ -334,6 +334,11 @@ namespace BTCK_XML
             {
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
+        }
+
+        private void DSHoaDon_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
