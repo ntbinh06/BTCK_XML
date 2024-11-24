@@ -16,7 +16,7 @@ namespace BTCK_XML
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TimKiemKH());
+            Application.Run(new DSHoaDon());
         }
     }
 }

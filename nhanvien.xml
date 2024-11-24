@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="NhanVien" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="NhanVien">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Manhanvien" type="xs:string" minOccurs="0" />
+                <xs:element name="Tennhanvien" type="xs:string" minOccurs="0" />
+                <xs:element name="Gioitinh" type="xs:string" minOccurs="0" />
+                <xs:element name="Ngaysinh" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Diachi" type="xs:string" minOccurs="0" />
+                <xs:element name="SDT" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <NhanVien>
+    <Manhanvien>NV001</Manhanvien>
+    <Tennhanvien>Nguyễn Văn A</Tennhanvien>
+    <Gioitinh>Nam</Gioitinh>
+    <Ngaysinh>1990-01-15T00:00:00+07:00</Ngaysinh>
+    <Diachi>Hà Nội</Diachi>
+    <SDT>0123456789</SDT>
+  </NhanVien>
+  <NhanVien>
+    <Manhanvien>NV002</Manhanvien>
+    <Tennhanvien>Trần Thị B</Tennhanvien>
+    <Gioitinh>Nữ</Gioitinh>
+    <Ngaysinh>1992-05-20T00:00:00+07:00</Ngaysinh>
+    <Diachi>Hồ Chí Minh</Diachi>
+    <SDT>0987654321</SDT>
+  </NhanVien>
+  <NhanVien>
+    <Manhanvien>NV003</Manhanvien>
+    <Tennhanvien>Lê Minh C</Tennhanvien>
+    <Gioitinh>Nam</Gioitinh>
+    <Ngaysinh>1988-03-10T00:00:00+07:00</Ngaysinh>
+    <Diachi>Đà Nẵng</Diachi>
+    <SDT>0345678901</SDT>
+  </NhanVien>
+  <NhanVien>
+    <Manhanvien>6</Manhanvien>
+    <Tennhanvien>nv</Tennhanvien>
+    <Gioitinh>
+    </Gioitinh>
+    <Ngaysinh>2024-11-19</Ngaysinh>
+    <Diachi>
+    </Diachi>
+    <SDT>
+    </SDT>
+  </NhanVien>
+</NewDataSet>

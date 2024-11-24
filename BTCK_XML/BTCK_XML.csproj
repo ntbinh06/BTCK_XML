@@ -91,6 +91,7 @@
       <DependentUpon>QuanLiGauBong.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="TaoXML.cs" />
     <Compile Include="TimKiemKH.cs">
       <SubType>Form</SubType>
     </Compile>
