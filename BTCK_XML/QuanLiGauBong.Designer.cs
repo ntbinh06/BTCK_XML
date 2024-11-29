@@ -104,7 +104,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lí gấu bông";
             // 
@@ -113,7 +113,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(443, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Quản lí nhân viên";
             // 
@@ -132,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(674, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 16);
+            this.label3.Size = new System.Drawing.Size(131, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Quản lí khách hàng";
             // 
@@ -151,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(214, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 16);
+            this.label4.Size = new System.Drawing.Size(109, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Quản lí hóa đơn";
             // 
@@ -200,6 +200,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(301, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(334, 46);

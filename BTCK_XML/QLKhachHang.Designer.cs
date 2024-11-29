@@ -38,19 +38,19 @@ namespace BTCK_XML
             this.label_SDT = new System.Windows.Forms.Label();
             this.label_Email = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tx_maKH = new System.Windows.Forms.TextBox();
-            this.tx_TenKH = new System.Windows.Forms.TextBox();
-            this.tx_GioiTinh = new System.Windows.Forms.TextBox();
-            this.tx_DiaChi = new System.Windows.Forms.TextBox();
-            this.tx_Sdt = new System.Windows.Forms.TextBox();
-            this.tx_Email = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_thoat = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,9 +61,9 @@ namespace BTCK_XML
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(271, 21);
+            this.label1.Location = new System.Drawing.Point(270, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 39);
+            this.label1.Size = new System.Drawing.Size(410, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
@@ -125,7 +125,7 @@ namespace BTCK_XML
             // label_SDT
             // 
             this.label_SDT.AutoSize = true;
-            this.label_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.label_SDT.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label_SDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_SDT.ForeColor = System.Drawing.Color.Crimson;
             this.label_SDT.Location = new System.Drawing.Point(486, 91);
@@ -147,14 +147,14 @@ namespace BTCK_XML
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.tx_Email);
-            this.groupBox1.Controls.Add(this.tx_Sdt);
-            this.groupBox1.Controls.Add(this.tx_DiaChi);
-            this.groupBox1.Controls.Add(this.tx_GioiTinh);
-            this.groupBox1.Controls.Add(this.tx_TenKH);
-            this.groupBox1.Controls.Add(this.tx_maKH);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtSDT);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(this.txtGioiTinh);
+            this.groupBox1.Controls.Add(this.txtTenKhachHang);
+            this.groupBox1.Controls.Add(this.txtMaKhachHang);
             this.groupBox1.Controls.Add(this.label_Email);
             this.groupBox1.Controls.Add(this.label_tenKH);
             this.groupBox1.Controls.Add(this.label_SDT);
@@ -171,61 +171,69 @@ namespace BTCK_XML
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin Khách hàng";
             // 
-            // tx_maKH
+            // dateTimePicker1
             // 
-            this.tx_maKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tx_maKH.Location = new System.Drawing.Point(202, 31);
-            this.tx_maKH.Name = "tx_maKH";
-            this.tx_maKH.Size = new System.Drawing.Size(237, 30);
-            this.tx_maKH.TabIndex = 8;
+            this.dateTimePicker1.Location = new System.Drawing.Point(202, 190);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(282, 27);
+            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 11, 17, 1, 50, 1, 0);
             // 
-            // tx_TenKH
+            // txtEmail
             // 
-            this.tx_TenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tx_TenKH.Location = new System.Drawing.Point(202, 86);
-            this.tx_TenKH.Name = "tx_TenKH";
-            this.tx_TenKH.Size = new System.Drawing.Size(237, 30);
-            this.tx_TenKH.TabIndex = 9;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(629, 141);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(237, 30);
+            this.txtEmail.TabIndex = 14;
             // 
-            // tx_GioiTinh
+            // txtSDT
             // 
-            this.tx_GioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tx_GioiTinh.Location = new System.Drawing.Point(202, 139);
-            this.tx_GioiTinh.Name = "tx_GioiTinh";
-            this.tx_GioiTinh.Size = new System.Drawing.Size(237, 30);
-            this.tx_GioiTinh.TabIndex = 10;
+            this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(629, 88);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(237, 30);
+            this.txtSDT.TabIndex = 13;
             // 
-            // tx_DiaChi
+            // txtDiaChi
             // 
-            this.tx_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tx_DiaChi.Location = new System.Drawing.Point(629, 33);
-            this.tx_DiaChi.Name = "tx_DiaChi";
-            this.tx_DiaChi.Size = new System.Drawing.Size(237, 30);
-            this.tx_DiaChi.TabIndex = 12;
+            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(629, 33);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(237, 30);
+            this.txtDiaChi.TabIndex = 12;
             // 
-            // tx_Sdt
+            // txtGioiTinh
             // 
-            this.tx_Sdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tx_Sdt.Location = new System.Drawing.Point(629, 88);
-            this.tx_Sdt.Name = "tx_Sdt";
-            this.tx_Sdt.Size = new System.Drawing.Size(237, 30);
-            this.tx_Sdt.TabIndex = 13;
+            this.txtGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioiTinh.Location = new System.Drawing.Point(202, 139);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(237, 30);
+            this.txtGioiTinh.TabIndex = 10;
             // 
-            // tx_Email
+            // txtTenKhachHang
             // 
-            this.tx_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tx_Email.Location = new System.Drawing.Point(629, 141);
-            this.tx_Email.Name = "tx_Email";
-            this.tx_Email.Size = new System.Drawing.Size(237, 30);
-            this.tx_Email.TabIndex = 14;
+            this.txtTenKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhachHang.Location = new System.Drawing.Point(202, 86);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(237, 30);
+            this.txtTenKhachHang.TabIndex = 9;
+            // 
+            // txtMaKhachHang
+            // 
+            this.txtMaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhachHang.Location = new System.Drawing.Point(202, 31);
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Size = new System.Drawing.Size(237, 30);
+            this.txtMaKhachHang.TabIndex = 8;
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.groupBox2.Controls.Add(this.btn_thoat);
-            this.groupBox2.Controls.Add(this.btn_xoa);
-            this.groupBox2.Controls.Add(this.btn_sua);
-            this.groupBox2.Controls.Add(this.btn_Them);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.btnThoat);
+            this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Crimson;
             this.groupBox2.Location = new System.Drawing.Point(41, 393);
@@ -235,29 +243,57 @@ namespace BTCK_XML
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
-            // btn_xoa
+            // btnThoat
             // 
-            this.btn_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoa.Image = global::BTCK_XML.Properties.Resources.icons8_delete_25;
-            this.btn_xoa.Location = new System.Drawing.Point(496, 17);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(123, 53);
-            this.btn_xoa.TabIndex = 2;
-            this.btn_xoa.Text = "Xóa";
-            this.btn_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
+            this.btnThoat.Location = new System.Drawing.Point(687, 17);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(123, 53);
+            this.btnThoat.TabIndex = 3;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btn_thoat
+            // btnXoa
             // 
-            this.btn_thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thoat.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
-            this.btn_thoat.Location = new System.Drawing.Point(687, 17);
-            this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(123, 53);
-            this.btn_thoat.TabIndex = 3;
-            this.btn_thoat.Text = "Thoát";
-            this.btn_thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = global::BTCK_XML.Properties.Resources.icons8_delete_25;
+            this.btnXoa.Location = new System.Drawing.Point(496, 17);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(123, 53);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::BTCK_XML.Properties.Resources.icons8_pencil_25;
+            this.btnSua.Location = new System.Drawing.Point(300, 17);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(123, 53);
+            this.btnSua.TabIndex = 1;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::BTCK_XML.Properties.Resources.icons8_add_25;
+            this.btnThem.Location = new System.Drawing.Point(109, 17);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(123, 53);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dataGridView1
             // 
@@ -268,38 +304,6 @@ namespace BTCK_XML
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(885, 268);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sua.Image = global::BTCK_XML.Properties.Resources.icons8_pencil_25;
-            this.btn_sua.Location = new System.Drawing.Point(300, 17);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(123, 53);
-            this.btn_sua.TabIndex = 1;
-            this.btn_sua.Text = "Sửa";
-            this.btn_sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Image = global::BTCK_XML.Properties.Resources.icons8_add_25;
-            this.btn_Them.Location = new System.Drawing.Point(109, 17);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(123, 53);
-            this.btn_Them.TabIndex = 0;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Them.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(202, 190);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(237, 27);
-            this.dateTimePicker1.TabIndex = 15;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 11, 17, 1, 50, 1, 0);
             // 
             // QLKhachHang
             // 
@@ -313,6 +317,7 @@ namespace BTCK_XML
             this.Controls.Add(this.groupBox1);
             this.Name = "QLKhachHang";
             this.Text = "QLKhachHang";
+            this.Load += new System.EventHandler(this.QLKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -333,17 +338,17 @@ namespace BTCK_XML
         private System.Windows.Forms.Label label_SDT;
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tx_Email;
-        private System.Windows.Forms.TextBox tx_Sdt;
-        private System.Windows.Forms.TextBox tx_DiaChi;
-        private System.Windows.Forms.TextBox tx_GioiTinh;
-        private System.Windows.Forms.TextBox tx_TenKH;
-        private System.Windows.Forms.TextBox tx_maKH;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtGioiTinh;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_thoat;
-        private System.Windows.Forms.Button btn_xoa;
-        private System.Windows.Forms.Button btn_sua;
-        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
