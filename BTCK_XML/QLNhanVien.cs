@@ -17,8 +17,9 @@ namespace BTCK_XML
 {
     public partial class QLNhanVien : Form
     {
+        private string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
-        private string fileXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "nhanvien.xml");
+        private string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Nhanvien.xml");
 
         public QLNhanVien()
         {
@@ -32,7 +33,7 @@ namespace BTCK_XML
             try
             {
                 // Đường dẫn tới tệp XML
-                
+                EnsureDataFolderExists();
 
                 // Kiểm tra xem tệp có tồn tại không
                 if (!File.Exists(fileXML))
@@ -56,7 +57,15 @@ namespace BTCK_XML
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
-
+        // Tạo thư mục Data nếu chưa tồn tại
+        private void EnsureDataFolderExists()
+        {
+            string dataFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
+            if (!Directory.Exists(dataFolder))
+            {
+                Directory.CreateDirectory(dataFolder);
+            }
+        }
         private void LoadData()
         {
             // Tải dữ liệu từ tệp XML vào DataGridView
@@ -137,58 +146,62 @@ namespace BTCK_XML
         {
             try
             {
-                string tenBang = "NhanVien"; // Tên bảng trong cơ sở dữ liệu
-                string tenCot = "Manhanvien"; // Tên cột để tìm kiếm (ví dụ: mã nhân viên)
-                string giaTri = txtMaNV.Text.Trim(); // Giá trị tìm kiếm từ textbox
-
-                // Kiểm tra xem tệp XML có tồn tại không
-                if (!System.IO.File.Exists(fileXML))
+                // Check if required fields are filled
+                if (string.IsNullOrWhiteSpace(txtMaNV.Text) ||
+                    string.IsNullOrWhiteSpace(txtTenNV.Text) ||
+                    string.IsNullOrWhiteSpace(txtGioitinh.Text) ||
+                    string.IsNullOrWhiteSpace(txtDiachi.Text) ||
+                    string.IsNullOrWhiteSpace(txtSdt.Text))
                 {
-                    MessageBox.Show("Tệp XML không tồn tại.");
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin cần sửa!");
                     return;
                 }
 
-                // Cập nhật cơ sở dữ liệu
-                taoXML.Sua_Database(tenBang, fileXML, tenCot, giaTri);
-
-                // Tải tệp XML và tìm nút cần cập nhật
-                XmlDocument doc = new XmlDocument();
-                doc.Load(fileXML);
-                string xpath = $"/NewDataSet/NhanVien[Manhanvien[text()='{giaTri}']]"; // XPath để xác định nút cần cập nhật
-                XmlNode nodeToUpdate = doc.SelectSingleNode(xpath);
-
-                // Kiểm tra xem nút có tồn tại không
-                if (nodeToUpdate != null)
+                using (var connection = new SqlConnection(strCon))
                 {
-                    // Cập nhật các giá trị của nút hiện có
-                    nodeToUpdate["Tennhanvien"].InnerText = txtTenNV.Text.Trim();
-                    nodeToUpdate["Gioitinh"].InnerText = txtGioitinh.Text.Trim();
-                    nodeToUpdate["Ngaysinh"].InnerText = dtpNgaysinh.Value.ToString("yyyy-MM-dd");
-                    nodeToUpdate["Diachi"].InnerText = txtDiachi.Text.Trim();
-                    nodeToUpdate["SDT"].InnerText = txtSdt.Text.Trim();
+                    connection.Open();
 
-                    // Lưu lại tệp XML
-                    doc.Save(fileXML);
+                    // SQL query to update employee information
+                    string sqlUpdate = "UPDATE NhanVien SET Tennhanvien = @Tennhanvien, Gioitinh = @Gioitinh, " +
+                                       "Ngaysinh = @Ngaysinh, Diachi = @Diachi, SDT = @SDT " +
+                                       "WHERE Manhanvien = @Manhanvien";
 
-                    // Tải lại dữ liệu sau khi cập nhật
-                    LoadData();
-                    txtMaNV.Text = "";
-                    txtTenNV.Text = "";
-                    txtGioitinh.Text = "";
-                    txtDiachi.Text = "";
-                    txtSdt.Text = "";
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy nhân viên với mã: " + giaTri);
+                    using (var cmdUpdate = new SqlCommand(sqlUpdate, connection))
+                    {
+                        // Add parameters to avoid SQL injection
+                        cmdUpdate.Parameters.AddWithValue("@Manhanvien", txtMaNV.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@Tennhanvien", txtTenNV.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@Gioitinh", txtGioitinh.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@Ngaysinh", dtpNgaysinh.Value);
+                        cmdUpdate.Parameters.AddWithValue("@Diachi", txtDiachi.Text.Trim());
+                        cmdUpdate.Parameters.AddWithValue("@SDT", txtSdt.Text.Trim());
+
+                        // Execute the update command
+                        int rowsAffected = cmdUpdate.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Cập nhật thông tin nhân viên thành công!");
+
+                            // Load updated data into the form or grid
+                            LoadData();
+
+                            // Optionally, update the XML file if needed
+                            taoXML.taoXML("SELECT * FROM NhanVien", "NhanVien", fileXML);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy nhân viên với mã: " + txtMaNV.Text);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+                MessageBox.Show("Lỗi khi sửa: " + ex.Message);
             }
         }
+
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {

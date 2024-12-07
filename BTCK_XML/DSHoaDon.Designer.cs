@@ -39,7 +39,6 @@
             this.txtNoigiaohang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTenkhachhang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMahoadon = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ccbKhachhang = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,6 +69,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ccbKhachhang);
             this.groupBox1.Controls.Add(this.cbbNhanvien);
             this.groupBox1.Controls.Add(this.cbbSanpham);
             this.groupBox1.Controls.Add(this.dtpNgaydat);
@@ -78,7 +79,6 @@
             this.groupBox1.Controls.Add(this.txtNoigiaohang);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtTenkhachhang);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtMahoadon);
@@ -162,13 +162,6 @@
             this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Tên sản phẩm";
-            // 
-            // txtTenkhachhang
-            // 
-            this.txtTenkhachhang.Location = new System.Drawing.Point(141, 97);
-            this.txtTenkhachhang.Name = "txtTenkhachhang";
-            this.txtTenkhachhang.Size = new System.Drawing.Size(186, 22);
-            this.txtTenkhachhang.TabIndex = 5;
             // 
             // label4
             // 
@@ -289,6 +282,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(793, 203);
             this.dataGridView1.TabIndex = 0;
             // 
+            // ccbKhachhang
+            // 
+            this.ccbKhachhang.FormattingEnabled = true;
+            this.ccbKhachhang.Location = new System.Drawing.Point(142, 97);
+            this.ccbKhachhang.Name = "ccbKhachhang";
+            this.ccbKhachhang.Size = new System.Drawing.Size(185, 24);
+            this.ccbKhachhang.TabIndex = 17;
+            this.ccbKhachhang.SelectedIndexChanged += new System.EventHandler(this.ccbKhachhang_SelectedIndexChanged);
+            // 
             // DSHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,7 +337,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgaydat;
         private System.Windows.Forms.ComboBox cbbNhanvien;
         private System.Windows.Forms.ComboBox cbbSanpham;
-        private System.Windows.Forms.TextBox txtTenkhachhang;
+        private System.Windows.Forms.ComboBox ccbKhachhang;
     }
 }
 
