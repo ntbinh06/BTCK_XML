@@ -96,7 +96,7 @@ namespace BTCK_XML
                 txtSdt.Text = sdt;
             }
         }
-        private void btn_Them_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace BTCK_XML
 
                 // Thêm vào cơ sở dữ liệu
                 taoXML.Them_Database_NhanVien("NhanVien", fileXML);
-                
+
 
                 MessageBox.Show("Thêm thành công!");
 
@@ -142,7 +142,7 @@ namespace BTCK_XML
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
-        private void btn_Sua_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             try
             {
@@ -202,8 +202,7 @@ namespace BTCK_XML
             }
         }
 
-
-        private void btn_Xoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
@@ -254,6 +253,7 @@ namespace BTCK_XML
         {
 
         }
+
     }
 
 

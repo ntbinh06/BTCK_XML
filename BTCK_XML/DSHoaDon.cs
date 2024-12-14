@@ -405,10 +405,7 @@ namespace BTCK_XML
 
         }
 
-        private void ccbKhachhang_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -416,5 +413,6 @@ namespace BTCK_XML
             Home.Show();
             this.Hide();
         }
+
     }
 }
