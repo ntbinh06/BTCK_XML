@@ -15,7 +15,7 @@ namespace BTCK_XML
 {
     internal class TaoXML
     {
-        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         public void taoXML(string sql, string bang, string _FileXML)
         {
             using (SqlConnection con = new SqlConnection(strCon))
@@ -417,5 +417,6 @@ namespace BTCK_XML
             // Mở tệp HTML đã tạo trong trình duyệt
             System.Diagnostics.Process.Start(tenFileXML.Replace(".xml", ".html"));
         }
+
     }
 }

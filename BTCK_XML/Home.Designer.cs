@@ -43,9 +43,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.buttonTimKiem = new System.Windows.Forms.Button();
+            this.radioButtonOr = new System.Windows.Forms.RadioButton();
+            this.radioButtonAnd = new System.Windows.Forms.RadioButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -78,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -98,6 +101,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(963, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // trangChủToolStripMenuItem
             // 
@@ -179,7 +183,7 @@
             this.bearCute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bearCute.TabIndex = 8;
             this.bearCute.TabStop = false;
-            this.bearCute.Click += new System.EventHandler(this.bearCute_Click);
+
             // 
             // pictureBox3
             // 
@@ -222,11 +226,11 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(957, 939);
             this.tabControl1.TabIndex = 11;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
+         
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -237,10 +241,22 @@
             this.tabPage1.Text = "Gấu bông";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 211);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(933, 266);
+            this.dataGridView1.TabIndex = 2;
+           
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.buttonTimKiem);
+            this.groupBox2.Controls.Add(this.radioButtonOr);
+            this.groupBox2.Controls.Add(this.radioButtonAnd);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.comboBox2);
@@ -254,29 +270,41 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nội dung tìm kiếm";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+          
             // 
-            // radioButton2
+            // buttonTimKiem
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(381, 58);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 24);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Or";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.buttonTimKiem.Location = new System.Drawing.Point(726, 49);
+            this.buttonTimKiem.Name = "buttonTimKiem";
+            this.buttonTimKiem.Size = new System.Drawing.Size(139, 32);
+            this.buttonTimKiem.TabIndex = 8;
+            this.buttonTimKiem.Text = "Tìm kiếm";
+            this.buttonTimKiem.UseVisualStyleBackColor = true;
+            this.buttonTimKiem.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton1
+            // radioButtonOr
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(245, 58);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 24);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "And";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonOr.AutoSize = true;
+            this.radioButtonOr.Location = new System.Drawing.Point(381, 58);
+            this.radioButtonOr.Name = "radioButtonOr";
+            this.radioButtonOr.Size = new System.Drawing.Size(49, 24);
+            this.radioButtonOr.TabIndex = 7;
+            this.radioButtonOr.TabStop = true;
+            this.radioButtonOr.Text = "Or";
+            this.radioButtonOr.UseVisualStyleBackColor = true;
+           
+            // 
+            // radioButtonAnd
+            // 
+            this.radioButtonAnd.AutoSize = true;
+            this.radioButtonAnd.Location = new System.Drawing.Point(245, 58);
+            this.radioButtonAnd.Name = "radioButtonAnd";
+            this.radioButtonAnd.Size = new System.Drawing.Size(59, 24);
+            this.radioButtonAnd.TabIndex = 6;
+            this.radioButtonAnd.TabStop = true;
+            this.radioButtonAnd.Text = "And";
+            this.radioButtonAnd.UseVisualStyleBackColor = true;
+          
             // 
             // textBox2
             // 
@@ -284,6 +312,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(236, 27);
             this.textBox2.TabIndex = 5;
+         
             // 
             // textBox1
             // 
@@ -291,6 +320,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(236, 27);
             this.textBox1.TabIndex = 4;
+          
             // 
             // comboBox2
             // 
@@ -299,7 +329,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(199, 28);
             this.comboBox2.TabIndex = 3;
-            // 
+           
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -307,6 +337,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(199, 28);
             this.comboBox1.TabIndex = 2;
+         
             // 
             // label7
             // 
@@ -317,7 +348,7 @@
             this.label7.Size = new System.Drawing.Size(107, 25);
             this.label7.TabIndex = 1;
             this.label7.Text = "Tìm kiếm 2";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+       
             // 
             // label6
             // 
@@ -384,7 +415,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(960, 506);
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+    
             // 
             // btnThoat
             // 
@@ -559,6 +590,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -603,6 +635,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RadioButton radioButtonOr;
+        private System.Windows.Forms.RadioButton radioButtonAnd;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonTimKiem;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button btnThoat;

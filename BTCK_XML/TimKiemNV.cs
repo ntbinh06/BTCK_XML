@@ -37,6 +37,11 @@ namespace BTCK_XML.Resources
             taoXML.TimKiemXSLT(maNV, fileXML, tenfileXSLT);
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void btnTimKiemTen_Click(object sender, EventArgs e)
         {
             // Lấy tên nhân viên từ TextBox
