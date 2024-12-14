@@ -90,6 +90,12 @@
     <Compile Include="QuanLiGauBong.Designer.cs">
       <DependentUpon>QuanLiGauBong.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimKiemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKiemNV.Designer.cs">
+      <DependentUpon>TimKiemNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="TaoXML.cs" />
     <Compile Include="TimKiemKH.cs">
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiGauBong.resx">
       <DependentUpon>QuanLiGauBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKiemNV.resx">
+      <DependentUpon>TimKiemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimKiemKH.resx">
       <DependentUpon>TimKiemKH.cs</DependentUpon>

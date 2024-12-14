@@ -113,18 +113,47 @@ namespace BTCK_XML
             // Lưu lại tệp XML
             doc.Save(FileXML);
         }
-        public void TimKiem(string _FileXML, string xml, DataGridView dgv) 
-        { 
-            XmlDocument xDoc = new XmlDocument(); 
-            xDoc.Load(Application.StartupPath + _FileXML);
+        public void TimKiem(string _FileXML, string xml, DataGridView dgv)
+        {
+            XmlDocument xDoc = new XmlDocument();
+
+            // Xây dựng đường dẫn tệp XML một cách an toàn
+            string fullPath = Path.Combine(Application.StartupPath, _FileXML);
+
+            // Kiểm tra xem tệp có tồn tại không
+            if (!File.Exists(fullPath))
+            {
+                MessageBox.Show("Tệp XML không tồn tại: " + fullPath);
+                return;
+            }
+
+            xDoc.Load(fullPath);
             string xPath = xml;
-            XmlNode node = xDoc.SelectSingleNode(xPath); 
+            XmlNode node = xDoc.SelectSingleNode(xPath);
+
+            if (node == null)
+            {
+                MessageBox.Show("Không tìm thấy dữ liệu với XPath: " + xPath);
+                return;
+            }
+
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
-            XmlNodeReader nr = new XmlNodeReader(node); 
-            ds.ReadXml(nr); 
-            dgv.DataSource = ds.Tables[0]; 
-            nr.Close(); 
+
+            using (XmlNodeReader nr = new XmlNodeReader(node))
+            {
+                ds.ReadXml(nr);
+            }
+
+            // Kiểm tra xem DataTable có dữ liệu không
+            if (ds.Tables.Count > 0)
+            {
+                dgv.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để hiển thị.");
+            }
         }
         public string LayGiaTri(string duongDan, string truongA, string giaTriA, string truongB)
         {
@@ -369,18 +398,24 @@ namespace BTCK_XML
 
         public void TimKiemXSLT(string data, string tenFileXML, string tenfileXSLT)
         {
+            // Tạo đối tượng XslCompiledTransform
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("" + tenfileXSLT + ".xslt");
 
+            // Tải tệp XSLT
+            xslt.Load(tenfileXSLT); // Không thêm ".xslt" ở đây
+
+            // Tạo danh sách tham số cho XSLT
             XsltArgumentList argList = new XsltArgumentList();
             argList.AddParam("Data", "", data);
 
-            using (XmlWriter writer = XmlWriter.Create("" + tenFileXML + ".html"))
+            // Tạo XmlWriter để ghi tệp HTML đầu ra
+            using (XmlWriter writer = XmlWriter.Create(tenFileXML.Replace(".xml", ".html"))) // Đổi tên tệp đầu ra
             {
-                xslt.Transform(new XPathDocument("" + tenFileXML + ".xml"), argList, writer);
+                xslt.Transform(new XPathDocument(tenFileXML), argList, writer); // Biến đổi XML thành HTML
             }
 
-            System.Diagnostics.Process.Start("" + tenFileXML + ".html");
+            // Mở tệp HTML đã tạo trong trình duyệt
+            System.Diagnostics.Process.Start(tenFileXML.Replace(".xml", ".html"));
         }
     }
 }

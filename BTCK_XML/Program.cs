@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTCK_XML.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace BTCK_XML
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DSHoaDon());
+            Application.Run(new TimKiemNV());
         }
     }
 }
