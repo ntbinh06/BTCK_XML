@@ -9,7 +9,7 @@ namespace BTCK_XML
 {
     public partial class Home : Form
     {
-        string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
         public Home()
         {
@@ -18,150 +18,13 @@ namespace BTCK_XML
 
         private void Home_Load(object sender, EventArgs e)
         {
-            LoadComboBoxData();
+            LoadGauBongData();
             LoadNhanVienData();
             LoadHoaDonData();
             LoadKH();
         }
 
-        private void LoadComboBoxData()
-        {
-            // Danh sách cột mà người dùng có thể tìm kiếm
-            List<string> columns = new List<string> { "Magaubong", "Tengaubong", "Gia" };
 
-            // Xóa các mục cũ nếu có
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
-
-            // Thêm các cột vào ComboBox
-            foreach (string column in columns)
-            {
-                comboBox1.Items.Add(column);
-                comboBox2.Items.Add(column);
-            }
-
-            // Đặt mục mặc định
-            if (comboBox1.Items.Count > 0) comboBox1.SelectedIndex = 0;
-            if (comboBox2.Items.Count > 0) comboBox2.SelectedIndex = 0;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Lấy giá trị từ ComboBox và TextBox
-            string column1 = comboBox1.SelectedItem.ToString(); // Cột 1
-            string value1 = textBox1.Text.Trim(); // Giá trị nhập trong TextBox 1
-            string column2 = comboBox2.SelectedItem.ToString(); // Cột 2
-            string value2 = textBox2.Text.Trim(); // Giá trị nhập trong TextBox 2
-
-            // Kiểm tra loại tìm kiếm (AND/OR)
-            string condition = radioButtonAnd.Checked ? "AND" : (radioButtonOr.Checked ? "OR" : "");
-
-            if (string.IsNullOrEmpty(condition))
-            {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm: AND hoặc OR.");
-                return;
-            }
-
-            // Thực hiện tìm kiếm
-            TimKiem(column1, value1, column2, value2, condition);
-        }
-
-        private void TimKiem(string column1, string value1, string column2, string value2, string condition)
-        {
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                try
-                {
-                    // Mở kết nối
-                    con.Open();
-
-                    // Xây dựng câu lệnh SQL cơ bản
-                    string query = "SELECT Magaubong, Tengaubong, Madanhmuc, Soluong, Gia, Mota FROM GauBong WHERE 1=1";
-
-                    // Điều kiện 1 (ComboBox1 và TextBox1)
-                    string condition1 = "";
-                    if (!string.IsNullOrEmpty(value1))
-                    {
-                        if (column1 == "Gia") // Xử lý giá trị kiểu số cho cột "Gia"
-                        {
-                            if (decimal.TryParse(value1, out decimal giaValue))
-                            {
-                                condition1 = $"{column1} = {giaValue}";
-                            }
-                            else
-                            {
-                                MessageBox.Show("Giá trị nhập cho cột 'Gia' không hợp lệ. Vui lòng nhập số.");
-                                return;
-                            }
-                        }
-                        else // Các cột khác
-                        {
-                            condition1 = $"{column1} LIKE N'%{value1}%'";
-                        }
-                    }
-
-                    // Điều kiện 2 (ComboBox2 và TextBox2)
-                    string condition2 = "";
-                    if (!string.IsNullOrEmpty(value2))
-                    {
-                        if (column2 == "Gia") // Xử lý giá trị kiểu số cho cột "Gia"
-                        {
-                            if (decimal.TryParse(value2, out decimal giaValue))
-                            {
-                                condition2 = $"{column2} = {giaValue}";
-                            }
-                            else
-                            {
-                                MessageBox.Show("Giá trị nhập cho cột 'Gia' không hợp lệ. Vui lòng nhập số.");
-                                return;
-                            }
-                        }
-                        else // Các cột khác
-                        {
-                            condition2 = $"{column2} LIKE N'%{value2}%'";
-                        }
-                    }
-
-                    // Kết hợp các điều kiện
-                    if (!string.IsNullOrEmpty(condition1) && !string.IsNullOrEmpty(condition2))
-                    {
-                        query += $" AND ({condition1} {condition} {condition2})";
-                    }
-                    else if (!string.IsNullOrEmpty(condition1))
-                    {
-                        query += $" AND ({condition1})";
-                    }
-                    else if (!string.IsNullOrEmpty(condition2))
-                    {
-                        query += $" AND ({condition2})";
-                    }
-
-                    // Kiểm tra truy vấn SQL
-                    Console.WriteLine($"Generated Query: {query}");
-
-                    // Tạo SqlCommand và thực thi câu lệnh SQL
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    // Hiển thị kết quả tìm kiếm vào DataGridView
-                    dataGridView1.DataSource = dt;
-                    dataGridView1.Refresh(); // Làm mới DataGridView
-
-                    // Thông báo nếu không có kết quả
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Không tìm thấy kết quả!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Xử lý lỗi nếu xảy ra
-                    MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message);
-                }
-            }
-        }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -434,6 +297,70 @@ namespace BTCK_XML
             this.Hide();
         }
 
-        
+        private void btnTimKiemMaGau_Click(object sender, EventArgs e)
+        {
+            string maGau = txtMaGau.Text.Trim(); // TextBox for searching teddy bear by code
+            string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xml");
+            string tenfileXSLT = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xslt");
+
+            if (string.IsNullOrWhiteSpace(maGau))
+            {
+                MessageBox.Show("Vui lòng nhập mã gấu bông để tìm kiếm.");
+                return;
+            }
+
+            string xmlXPath = $"/NewDataSet/GauBong[Magaubong[text()='{maGau}']]"; // XPath to search
+            taoXML.TimKiem(fileXML, xmlXPath, dataGridViewGauBong);
+
+            // Optional: Perform XSLT transformation if required
+            taoXML.TimKiemXSLT(maGau, fileXML, tenfileXSLT);
+        }
+
+        private void btnTimKiemTenGau_Click(object sender, EventArgs e)
+        {
+            string tenGau = txtTenGau.Text.Trim(); // TextBox for searching teddy bear by name
+            string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xml");
+
+            if (string.IsNullOrWhiteSpace(tenGau))
+            {
+                MessageBox.Show("Vui lòng nhập tên gấu bông để tìm kiếm.");
+                return;
+            }
+
+            string xmlXPath = $"/NewDataSet/GauBong[Tengaubong[contains(text(),'{tenGau}')]]"; // XPath to search
+            taoXML.TimKiem(fileXML, xmlXPath, dataGridViewGauBong);
+        }
+    
+
+    private void LoadGauBongData()
+        {
+            try
+            {
+                string dataFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
+                string fileXML = Path.Combine(dataFolder, "GauBong.xml");
+
+                if (!File.Exists(fileXML))
+                {
+                    string sql = "SELECT GauBong.Magaubong, GauBong.Tengaubong, GauBong.Madanhmuc, GauBong.Soluong, GauBong.Gia, GauBong.Mota, DanhMuc.Tendanhmuc "
+                               + "FROM GauBong INNER JOIN DanhMuc ON GauBong.Madanhmuc = DanhMuc.Madanhmuc";
+
+                    string bang = "GauBong";
+                    taoXML.taoXML(sql, bang, fileXML);
+                    MessageBox.Show("Tệp XML đã được tạo thành công.");
+                }
+
+                LoadDataGau(fileXML);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void LoadDataGau(string fileXML)
+        {
+            DataTable dt = taoXML.loadDataGridView(fileXML);
+            dataGridViewGauBong.DataSource = dt;
+        }
     }
 }

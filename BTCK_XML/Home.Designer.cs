@@ -37,68 +37,72 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.bearCute = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGauBong = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonTimKiem = new System.Windows.Forms.Button();
-            this.radioButtonOr = new System.Windows.Forms.RadioButton();
-            this.radioButtonAnd = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnTimKiemTenGau = new System.Windows.Forms.Button();
+            this.txtTenGau = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemMaGau = new System.Windows.Forms.Button();
+            this.txtMaGau = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewHD = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemTenK = new System.Windows.Forms.Button();
             this.txtTenKHHD = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemMaHD = new System.Windows.Forms.Button();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.dataGridViewNV = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemTenNV = new System.Windows.Forms.Button();
             this.txtSearchTenNV = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemMaNV = new System.Windows.Forms.Button();
             this.txtSearchMaNV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemKHTen = new System.Windows.Forms.Button();
             this.txtSearchTen = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemKHMa = new System.Windows.Forms.Button();
             this.txtSearchMa = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnTimKiemTenK = new System.Windows.Forms.Button();
-            this.btnTimKiemMaHD = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnTimKiemTenNV = new System.Windows.Forms.Button();
-            this.btnTimKiemMaNV = new System.Windows.Forms.Button();
-            this.btnTimKiemKHTen = new System.Windows.Forms.Button();
-            this.btnTimKiemKHMa = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.bearCute = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bearCute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGauBong)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHD)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -111,11 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bearCute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,19 +135,19 @@
             // trangChủToolStripMenuItem
             // 
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
             // 
             // giớiThiệuToolStripMenuItem
             // 
             this.giớiThiệuToolStripMenuItem.Name = "giớiThiệuToolStripMenuItem";
-            this.giớiThiệuToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.giớiThiệuToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.giớiThiệuToolStripMenuItem.Text = "Giới thiệu";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // label1
@@ -156,7 +155,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 17);
+            this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lí gấu bông";
             // 
@@ -165,7 +164,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(351, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 17);
+            this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Quản lí nhân viên";
             // 
@@ -174,7 +173,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(544, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 17);
+            this.label3.Size = new System.Drawing.Size(120, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Quản lí khách hàng";
             // 
@@ -183,7 +182,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(172, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.Size = new System.Drawing.Size(100, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Quản lí hóa đơn";
             // 
@@ -206,6 +205,69 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::BTCK_XML.Properties.Resources.icons8_account_100;
+            this.pictureBox4.Location = new System.Drawing.Point(778, 8);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(47, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(745, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 16);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Quản lý tài khoản";
+            // 
+            // bearCute
+            // 
+            this.bearCute.Image = global::BTCK_XML.Properties.Resources.bear;
+            this.bearCute.Location = new System.Drawing.Point(34, 8);
+            this.bearCute.Name = "bearCute";
+            this.bearCute.Size = new System.Drawing.Size(49, 35);
+            this.bearCute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bearCute.TabIndex = 8;
+            this.bearCute.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BTCK_XML.Properties.Resources.customer;
+            this.pictureBox3.Location = new System.Drawing.Point(577, 8);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(47, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BTCK_XML.Properties.Resources.staff;
+            this.pictureBox2.Location = new System.Drawing.Point(375, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(59, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BTCK_XML.Properties.Resources.bill;
+            this.pictureBox1.Location = new System.Drawing.Point(194, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -220,10 +282,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage1.Controls.Add(this.dataGridViewGauBong);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.groupBox9);
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -232,126 +295,120 @@
             this.tabPage1.Text = "Gấu bông";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // dataGridView1
+            // dataGridViewGauBong
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 211);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(933, 266);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewGauBong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGauBong.Location = new System.Drawing.Point(77, 448);
+            this.dataGridViewGauBong.Name = "dataGridViewGauBong";
+            this.dataGridViewGauBong.RowHeadersWidth = 51;
+            this.dataGridViewGauBong.RowTemplate.Height = 24;
+            this.dataGridViewGauBong.Size = new System.Drawing.Size(793, 220);
+            this.dataGridViewGauBong.TabIndex = 23;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonTimKiem);
-            this.groupBox2.Controls.Add(this.radioButtonOr);
-            this.groupBox2.Controls.Add(this.radioButtonAnd);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.btnTimKiemTenGau);
+            this.groupBox2.Controls.Add(this.txtTenGau);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 52);
+            this.groupBox2.ForeColor = System.Drawing.Color.Crimson;
+            this.groupBox2.Location = new System.Drawing.Point(81, 293);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(934, 140);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.Size = new System.Drawing.Size(790, 120);
+            this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nội dung tìm kiếm";
+            this.groupBox2.Text = "Tìm kiếm theo tên gấu bông";
             // 
-            // buttonTimKiem
+            // btnTimKiemTenGau
             // 
-            this.buttonTimKiem.Location = new System.Drawing.Point(726, 49);
-            this.buttonTimKiem.Name = "buttonTimKiem";
-            this.buttonTimKiem.Size = new System.Drawing.Size(139, 32);
-            this.buttonTimKiem.TabIndex = 8;
-            this.buttonTimKiem.Text = "Tìm kiếm";
-            this.buttonTimKiem.UseVisualStyleBackColor = true;
-            this.buttonTimKiem.Click += new System.EventHandler(this.button1_Click);
+            this.btnTimKiemTenGau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemTenGau.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemTenGau.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemTenGau.Name = "btnTimKiemTenGau";
+            this.btnTimKiemTenGau.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemTenGau.TabIndex = 3;
+            this.btnTimKiemTenGau.Text = "Tìm kiếm";
+            this.btnTimKiemTenGau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemTenGau.UseVisualStyleBackColor = true;
+            this.btnTimKiemTenGau.Click += new System.EventHandler(this.btnTimKiemTenGau_Click);
             // 
-            // radioButtonOr
+            // txtTenGau
             // 
-            this.radioButtonOr.AutoSize = true;
-            this.radioButtonOr.Location = new System.Drawing.Point(381, 58);
-            this.radioButtonOr.Name = "radioButtonOr";
-            this.radioButtonOr.Size = new System.Drawing.Size(49, 24);
-            this.radioButtonOr.TabIndex = 7;
-            this.radioButtonOr.TabStop = true;
-            this.radioButtonOr.Text = "Or";
-            this.radioButtonOr.UseVisualStyleBackColor = true;
+            this.txtTenGau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenGau.Location = new System.Drawing.Point(293, 48);
+            this.txtTenGau.Name = "txtTenGau";
+            this.txtTenGau.Size = new System.Drawing.Size(254, 30);
+            this.txtTenGau.TabIndex = 2;
             // 
-            // radioButtonAnd
+            // label5
             // 
-            this.radioButtonAnd.AutoSize = true;
-            this.radioButtonAnd.Location = new System.Drawing.Point(245, 58);
-            this.radioButtonAnd.Name = "radioButtonAnd";
-            this.radioButtonAnd.Size = new System.Drawing.Size(59, 24);
-            this.radioButtonAnd.TabIndex = 6;
-            this.radioButtonAnd.TabStop = true;
-            this.radioButtonAnd.Text = "And";
-            this.radioButtonAnd.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Crimson;
+            this.label5.Location = new System.Drawing.Point(74, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(189, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nhập tên gấu bông :";
             // 
-            // textBox2
+            // groupBox9
             // 
-            this.textBox2.Location = new System.Drawing.Point(372, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(236, 27);
-            this.textBox2.TabIndex = 5;
+            this.groupBox9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox9.Controls.Add(this.btnTimKiemMaGau);
+            this.groupBox9.Controls.Add(this.txtMaGau);
+            this.groupBox9.Controls.Add(this.label6);
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.ForeColor = System.Drawing.Color.Crimson;
+            this.groupBox9.Location = new System.Drawing.Point(81, 149);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(790, 120);
+            this.groupBox9.TabIndex = 21;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Tìm kiếm theo mã gấu bông";
             // 
-            // textBox1
+            // btnTimKiemMaGau
             // 
-            this.textBox1.Location = new System.Drawing.Point(372, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 27);
-            this.textBox1.TabIndex = 4;
+            this.btnTimKiemMaGau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemMaGau.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemMaGau.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemMaGau.Name = "btnTimKiemMaGau";
+            this.btnTimKiemMaGau.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemMaGau.TabIndex = 3;
+            this.btnTimKiemMaGau.Text = "Tìm kiếm";
+            this.btnTimKiemMaGau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemMaGau.UseVisualStyleBackColor = true;
+            this.btnTimKiemMaGau.Click += new System.EventHandler(this.btnTimKiemMaGau_Click);
             // 
-            // comboBox2
+            // txtMaGau
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(135, 95);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(199, 28);
-            this.comboBox2.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 28);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(-3, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Tìm kiếm 2";
+            this.txtMaGau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaGau.Location = new System.Drawing.Point(293, 48);
+            this.txtMaGau.Name = "txtMaGau";
+            this.txtMaGau.Size = new System.Drawing.Size(254, 30);
+            this.txtMaGau.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-4, 23);
+            this.label6.ForeColor = System.Drawing.Color.Crimson;
+            this.label6.Location = new System.Drawing.Point(74, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tìm kiếm 1";
+            this.label6.Size = new System.Drawing.Size(189, 25);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Nhập mã gấu bông :";
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(267, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(358, 46);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tìm kiếm gấu bông";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Crimson;
+            this.label7.Location = new System.Drawing.Point(288, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(365, 38);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "TÌM KIẾM GẤU BÔNG";
             // 
             // tabPage2
             // 
@@ -367,6 +424,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hóa đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
+            this.button1.Location = new System.Drawing.Point(747, 662);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 53);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Thoát";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridViewHD
             // 
@@ -392,6 +461,19 @@
             this.groupBox5.TabIndex = 18;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tìm kiếm theo tên khách hàng";
+            // 
+            // btnTimKiemTenK
+            // 
+            this.btnTimKiemTenK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemTenK.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemTenK.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemTenK.Name = "btnTimKiemTenK";
+            this.btnTimKiemTenK.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemTenK.TabIndex = 3;
+            this.btnTimKiemTenK.Text = "Tìm kiếm";
+            this.btnTimKiemTenK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemTenK.UseVisualStyleBackColor = true;
+            this.btnTimKiemTenK.Click += new System.EventHandler(this.btnTimKiemTenK_Click);
             // 
             // txtTenKHHD
             // 
@@ -426,6 +508,19 @@
             this.groupBox6.TabIndex = 17;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Tìm kiếm theo mã hóa đơn";
+            // 
+            // btnTimKiemMaHD
+            // 
+            this.btnTimKiemMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemMaHD.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemMaHD.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemMaHD.Name = "btnTimKiemMaHD";
+            this.btnTimKiemMaHD.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemMaHD.TabIndex = 3;
+            this.btnTimKiemMaHD.Text = "Tìm kiếm";
+            this.btnTimKiemMaHD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemMaHD.UseVisualStyleBackColor = true;
+            this.btnTimKiemMaHD.Click += new System.EventHandler(this.btnTimKiemMaHD_Click);
             // 
             // txtMaHD
             // 
@@ -472,6 +567,18 @@
             this.tabPage3.Text = "Nhân viên";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
+            this.btnThoat.Location = new System.Drawing.Point(747, 649);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(123, 53);
+            this.btnThoat.TabIndex = 16;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewNV
             // 
             this.dataGridViewNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -496,6 +603,19 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm theo tên nhân viên";
+            // 
+            // btnTimKiemTenNV
+            // 
+            this.btnTimKiemTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemTenNV.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemTenNV.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemTenNV.Name = "btnTimKiemTenNV";
+            this.btnTimKiemTenNV.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemTenNV.TabIndex = 3;
+            this.btnTimKiemTenNV.Text = "Tìm kiếm";
+            this.btnTimKiemTenNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemTenNV.UseVisualStyleBackColor = true;
+            this.btnTimKiemTenNV.Click += new System.EventHandler(this.btnTimKiemTenNV_Click);
             // 
             // txtSearchTenNV
             // 
@@ -530,6 +650,19 @@
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm theo mã nhân viên";
+            // 
+            // btnTimKiemMaNV
+            // 
+            this.btnTimKiemMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemMaNV.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemMaNV.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemMaNV.Name = "btnTimKiemMaNV";
+            this.btnTimKiemMaNV.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemMaNV.TabIndex = 3;
+            this.btnTimKiemMaNV.Text = "Tìm kiếm";
+            this.btnTimKiemMaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemMaNV.UseVisualStyleBackColor = true;
+            this.btnTimKiemMaNV.Click += new System.EventHandler(this.btnTimKiemMaNV_Click);
             // 
             // txtSearchMaNV
             // 
@@ -600,6 +733,19 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Tìm kiếm theo tên Khách hàng";
             // 
+            // btnTimKiemKHTen
+            // 
+            this.btnTimKiemKHTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemKHTen.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemKHTen.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemKHTen.Name = "btnTimKiemKHTen";
+            this.btnTimKiemKHTen.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemKHTen.TabIndex = 3;
+            this.btnTimKiemKHTen.Text = "Tìm kiếm";
+            this.btnTimKiemKHTen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemKHTen.UseVisualStyleBackColor = true;
+            this.btnTimKiemKHTen.Click += new System.EventHandler(this.btnTimKiemKHTen_Click);
+            // 
             // txtSearchTen
             // 
             this.txtSearchTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -634,6 +780,19 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Tìm kiếm theo mã Khách hàng";
             // 
+            // btnTimKiemKHMa
+            // 
+            this.btnTimKiemKHMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemKHMa.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
+            this.btnTimKiemKHMa.Location = new System.Drawing.Point(606, 34);
+            this.btnTimKiemKHMa.Name = "btnTimKiemKHMa";
+            this.btnTimKiemKHMa.Size = new System.Drawing.Size(149, 59);
+            this.btnTimKiemKHMa.TabIndex = 3;
+            this.btnTimKiemKHMa.Text = "Tìm kiếm";
+            this.btnTimKiemKHMa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiemKHMa.UseVisualStyleBackColor = true;
+            this.btnTimKiemKHMa.Click += new System.EventHandler(this.btnTimKiemKHMa_Click);
+            // 
             // txtSearchMa
             // 
             this.txtSearchMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -664,171 +823,6 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "TÌM KIẾM KHÁCH HÀNG";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(745, 46);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(119, 17);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Quản lý tài khoản";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
-            this.button1.Location = new System.Drawing.Point(747, 662);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 53);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Thoát";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnTimKiemTenK
-            // 
-            this.btnTimKiemTenK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemTenK.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
-            this.btnTimKiemTenK.Location = new System.Drawing.Point(606, 34);
-            this.btnTimKiemTenK.Name = "btnTimKiemTenK";
-            this.btnTimKiemTenK.Size = new System.Drawing.Size(149, 59);
-            this.btnTimKiemTenK.TabIndex = 3;
-            this.btnTimKiemTenK.Text = "Tìm kiếm";
-            this.btnTimKiemTenK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTimKiemTenK.UseVisualStyleBackColor = true;
-            this.btnTimKiemTenK.Click += new System.EventHandler(this.btnTimKiemTenK_Click);
-            // 
-            // btnTimKiemMaHD
-            // 
-            this.btnTimKiemMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemMaHD.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
-            this.btnTimKiemMaHD.Location = new System.Drawing.Point(606, 34);
-            this.btnTimKiemMaHD.Name = "btnTimKiemMaHD";
-            this.btnTimKiemMaHD.Size = new System.Drawing.Size(149, 59);
-            this.btnTimKiemMaHD.TabIndex = 3;
-            this.btnTimKiemMaHD.Text = "Tìm kiếm";
-            this.btnTimKiemMaHD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTimKiemMaHD.UseVisualStyleBackColor = true;
-            this.btnTimKiemMaHD.Click += new System.EventHandler(this.btnTimKiemMaHD_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
-            this.btnThoat.Location = new System.Drawing.Point(747, 649);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(123, 53);
-            this.btnThoat.TabIndex = 16;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            // 
-            // btnTimKiemTenNV
-            // 
-            this.btnTimKiemTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemTenNV.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
-            this.btnTimKiemTenNV.Location = new System.Drawing.Point(606, 34);
-            this.btnTimKiemTenNV.Name = "btnTimKiemTenNV";
-            this.btnTimKiemTenNV.Size = new System.Drawing.Size(149, 59);
-            this.btnTimKiemTenNV.TabIndex = 3;
-            this.btnTimKiemTenNV.Text = "Tìm kiếm";
-            this.btnTimKiemTenNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTimKiemTenNV.UseVisualStyleBackColor = true;
-            this.btnTimKiemTenNV.Click += new System.EventHandler(this.btnTimKiemTenNV_Click);
-            // 
-            // btnTimKiemMaNV
-            // 
-            this.btnTimKiemMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemMaNV.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
-            this.btnTimKiemMaNV.Location = new System.Drawing.Point(606, 34);
-            this.btnTimKiemMaNV.Name = "btnTimKiemMaNV";
-            this.btnTimKiemMaNV.Size = new System.Drawing.Size(149, 59);
-            this.btnTimKiemMaNV.TabIndex = 3;
-            this.btnTimKiemMaNV.Text = "Tìm kiếm";
-            this.btnTimKiemMaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTimKiemMaNV.UseVisualStyleBackColor = true;
-            this.btnTimKiemMaNV.Click += new System.EventHandler(this.btnTimKiemMaNV_Click);
-            // 
-            // btnTimKiemKHTen
-            // 
-            this.btnTimKiemKHTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemKHTen.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
-            this.btnTimKiemKHTen.Location = new System.Drawing.Point(606, 34);
-            this.btnTimKiemKHTen.Name = "btnTimKiemKHTen";
-            this.btnTimKiemKHTen.Size = new System.Drawing.Size(149, 59);
-            this.btnTimKiemKHTen.TabIndex = 3;
-            this.btnTimKiemKHTen.Text = "Tìm kiếm";
-            this.btnTimKiemKHTen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTimKiemKHTen.UseVisualStyleBackColor = true;
-            this.btnTimKiemKHTen.Click += new System.EventHandler(this.btnTimKiemKHTen_Click);
-            // 
-            // btnTimKiemKHMa
-            // 
-            this.btnTimKiemKHMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemKHMa.Image = global::BTCK_XML.Properties.Resources.icons8_search_30;
-            this.btnTimKiemKHMa.Location = new System.Drawing.Point(606, 34);
-            this.btnTimKiemKHMa.Name = "btnTimKiemKHMa";
-            this.btnTimKiemKHMa.Size = new System.Drawing.Size(149, 59);
-            this.btnTimKiemKHMa.TabIndex = 3;
-            this.btnTimKiemKHMa.Text = "Tìm kiếm";
-            this.btnTimKiemKHMa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTimKiemKHMa.UseVisualStyleBackColor = true;
-            this.btnTimKiemKHMa.Click += new System.EventHandler(this.btnTimKiemKHMa_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::BTCK_XML.Properties.Resources.icons8_account_100;
-            this.pictureBox4.Location = new System.Drawing.Point(778, 8);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(47, 35);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // bearCute
-            // 
-            this.bearCute.Image = global::BTCK_XML.Properties.Resources.bear;
-            this.bearCute.Location = new System.Drawing.Point(34, 8);
-            this.bearCute.Name = "bearCute";
-            this.bearCute.Size = new System.Drawing.Size(49, 35);
-            this.bearCute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bearCute.TabIndex = 8;
-            this.bearCute.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::BTCK_XML.Properties.Resources.customer;
-            this.pictureBox3.Location = new System.Drawing.Point(577, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BTCK_XML.Properties.Resources.staff;
-            this.pictureBox2.Location = new System.Drawing.Point(375, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(59, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BTCK_XML.Properties.Resources.bill;
-            this.pictureBox1.Location = new System.Drawing.Point(194, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::BTCK_XML.Properties.Resources.bgrc;
@@ -855,12 +849,19 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bearCute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGauBong)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHD)).EndInit();
@@ -882,11 +883,6 @@
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bearCute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -910,22 +906,9 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButtonOr;
-        private System.Windows.Forms.RadioButton radioButtonAnd;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonTimKiem;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DataGridView dataGridViewNV;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -960,5 +943,16 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridViewGauBong;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnTimKiemTenGau;
+        private System.Windows.Forms.TextBox txtTenGau;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button btnTimKiemMaGau;
+        private System.Windows.Forms.TextBox txtMaGau;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
