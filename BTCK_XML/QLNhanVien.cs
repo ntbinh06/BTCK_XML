@@ -240,7 +240,9 @@ namespace BTCK_XML
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            Home Home = new Home();
+            Home.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)

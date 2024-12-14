@@ -17,7 +17,7 @@ namespace BTCK_XML
 {
     public partial class DSHoaDon : Form
     {
-        private string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "HoaDon.xml");
         private TaoXML taoXML = new TaoXML();
 
@@ -408,6 +408,13 @@ namespace BTCK_XML
         private void ccbKhachhang_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Home Home = new Home();
+            Home.Show();
+            this.Hide();
         }
     }
 }
