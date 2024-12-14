@@ -1,6 +1,6 @@
-﻿namespace BTCK_XML.Resources
+﻿namespace BTCK_XML
 {
-    partial class TimKiemNV
+    partial class TimKiemHD
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnThoat = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTimKiemTen = new System.Windows.Forms.Button();
@@ -39,32 +38,21 @@
             this.txtSearchMa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
-            this.btnThoat.Location = new System.Drawing.Point(755, 660);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(123, 53);
-            this.btnThoat.TabIndex = 11;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(85, 425);
+            this.dataGridView1.Location = new System.Drawing.Point(70, 447);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(793, 220);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.TabIndex = 14;
             // 
             // groupBox2
             // 
@@ -74,12 +62,12 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Crimson;
-            this.groupBox2.Location = new System.Drawing.Point(89, 270);
+            this.groupBox2.Location = new System.Drawing.Point(74, 292);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(790, 120);
-            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tìm kiếm theo tên nhân viên";
+            this.groupBox2.Text = "Tìm kiếm theo tên khách hàng";
             // 
             // btnTimKiemTen
             // 
@@ -109,9 +97,9 @@
             this.label3.ForeColor = System.Drawing.Color.Crimson;
             this.label3.Location = new System.Drawing.Point(74, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 25);
+            this.label3.Size = new System.Drawing.Size(209, 25);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Nhập tên nhân viên :";
+            this.label3.Text = "Nhập tên khách hàng :";
             // 
             // groupBox1
             // 
@@ -121,12 +109,12 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Crimson;
-            this.groupBox1.Location = new System.Drawing.Point(89, 126);
+            this.groupBox1.Location = new System.Drawing.Point(74, 148);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(790, 120);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tìm kiếm theo mã nhân viên";
+            this.groupBox1.Text = "Tìm kiếm theo mã hóa đơn";
             // 
             // btnTimKiemMa
             // 
@@ -156,34 +144,46 @@
             this.label2.ForeColor = System.Drawing.Color.Crimson;
             this.label2.Location = new System.Drawing.Point(74, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 25);
+            this.label2.Size = new System.Drawing.Size(178, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nhập mã Nhân viên :";
+            this.label2.Text = "Nhập mã hóa đơn :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(273, 33);
+            this.label1.Location = new System.Drawing.Point(279, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 38);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "TÌM KIẾM NHÂN VIÊN";
+            this.label1.Size = new System.Drawing.Size(340, 38);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "TÌM KIẾM HÓA ĐƠN";
             // 
-            // TimKiemNV
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::BTCK_XML.Properties.Resources.icons8_exit_25;
+            this.btnThoat.Location = new System.Drawing.Point(740, 687);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(123, 53);
+            this.btnThoat.TabIndex = 15;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            // 
+            // TimKiemHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 736);
+            this.ClientSize = new System.Drawing.Size(922, 771);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "TimKiemNV";
-            this.Text = "TimKiemNV";
-            this.Load += new System.EventHandler(this.TimKiemNV_Load);
+            this.Name = "TimKiemHD";
+            this.Text = "TimKiemHD";
+            this.Load += new System.EventHandler(this.TimKiemHD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -196,7 +196,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTimKiemTen;
@@ -207,5 +206,6 @@
         private System.Windows.Forms.TextBox txtSearchMa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

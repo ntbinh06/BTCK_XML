@@ -90,6 +90,12 @@
     <Compile Include="QuanLiGauBong.Designer.cs">
       <DependentUpon>QuanLiGauBong.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimKiemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKiemHD.Designer.cs">
+      <DependentUpon>TimKiemHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="TimKiemNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiGauBong.resx">
       <DependentUpon>QuanLiGauBong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKiemHD.resx">
+      <DependentUpon>TimKiemHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimKiemNV.resx">
       <DependentUpon>TimKiemNV.cs</DependentUpon>
