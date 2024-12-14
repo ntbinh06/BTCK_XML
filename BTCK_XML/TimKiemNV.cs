@@ -35,5 +35,10 @@ namespace BTCK_XML.Resources
             // Tìm kiếm bằng XSLT và biến đổi XML thành HTML
             taoXML.TimKiemXSLT(maNV, fileXML, tenfileXSLT);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
