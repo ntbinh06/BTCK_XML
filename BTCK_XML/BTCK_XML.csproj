@@ -171,6 +171,7 @@
     <Content Include="image\icons8-delete-25.png" />
     <Content Include="image\icons8-exit-25.png" />
     <Content Include="image\icons8-pencil-25.png" />
+    <None Include="Resources\icons8-account-100.png" />
     <None Include="Resources\bgrc.jpg" />
     <None Include="Resources\customer.png" />
     <None Include="Resources\staff.png" />

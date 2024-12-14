@@ -313,6 +313,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DSHoaDon";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DSHoaDon_FormClosing);
             this.Load += new System.EventHandler(this.DSHoaDon_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

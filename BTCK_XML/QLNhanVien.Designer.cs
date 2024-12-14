@@ -49,6 +49,8 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -279,6 +281,35 @@
             this.label1.Text = "Quản lý nhân viên";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btn_Sua
+            // 
+            this.btn_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Sua.ImageKey = "(none)";
+            this.btn_Sua.Location = new System.Drawing.Point(264, 20);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Sua.Size = new System.Drawing.Size(102, 43);
+            this.btn_Sua.TabIndex = 1;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Them.ImageKey = "(none)";
+            this.btn_Them.Location = new System.Drawing.Point(80, 20);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Them.Size = new System.Drawing.Size(102, 43);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "Tạo mới";
+            this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            // 
             // QLNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,6 +321,7 @@
             this.Controls.Add(this.label1);
             this.Name = "QLNhanVien";
             this.Text = "QLNhanVien";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QLNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.QLNhanVien_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

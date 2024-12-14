@@ -9,7 +9,7 @@ namespace BTCK_XML
 {
     public partial class Home : Form
     {
-        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
         public Home()
         {
@@ -21,6 +21,7 @@ namespace BTCK_XML
             LoadComboBoxData();
             LoadNhanVienData();
             LoadHoaDonData();
+            LoadKH();
         }
 
         private void LoadComboBoxData()
@@ -168,16 +169,6 @@ namespace BTCK_XML
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-        }
-
-        private void btnTimKiemTen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTimKiemMa_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnTimKiemMaNV_Click(object sender, EventArgs e)
@@ -363,5 +354,86 @@ namespace BTCK_XML
             QLNhanVien.Show();
             this.Hide();
         }
+
+        private void btnTimKiemKHMa_Click(object sender, EventArgs e)
+        {
+            // Lấy mã khách hàng từ TextBox
+            string maKH = txtSearchMa.Text.Trim(); // Giả sử bạn có một TextBox với tên txtSearchMaKH
+            string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "KhachHang.xml"); // Đường dẫn đến tệp XML của bạn
+            string tenfileXSLT = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "KhachHang_MaKH.xslt"); // Đường dẫn đến tệp XSLT của bạn
+
+            // Kiểm tra xem mã khách hàng có hợp lệ không
+            if (string.IsNullOrWhiteSpace(maKH))
+            {
+                MessageBox.Show("Vui lòng nhập mã khách hàng để tìm kiếm.");
+                return;
+            }
+
+            // Tìm kiếm bằng XPath và hiển thị kết quả trong DataGridView
+            string xmlXPath = $"/NewDataSet/KhachHang[contains(Makhachhang, '{maKH}')]"; // XPath tìm kiếm
+            taoXML.TimKiem(fileXML, xmlXPath, dataGridView2);
+
+            // Tìm kiếm bằng XSLT và biến đổi XML thành HTML
+            taoXML.TimKiemXSLT(maKH, fileXML, tenfileXSLT);
+        }
+
+        private void btnTimKiemKHTen_Click(object sender, EventArgs e)
+        {
+            // Lấy tên khách hàng từ TextBox
+            string tenKH = txtSearchTen.Text.Trim(); // Giả sử bạn có một TextBox với tên txtSearchTenKH
+            string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "KhachHang.xml"); // Đường dẫn đến tệp XML của bạn
+            string tenfileXSLT = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "KhachHang_TenKH.xslt"); // Đường dẫn đến tệp XSLT của bạn
+
+            // Kiểm tra xem tên khách hàng có hợp lệ không
+            if (string.IsNullOrWhiteSpace(tenKH))
+            {
+                MessageBox.Show("Vui lòng nhập tên khách hàng để tìm kiếm.");
+                return;
+            }
+
+            // Tìm kiếm bằng XPath và hiển thị kết quả trong DataGridView
+            string xmlXPath = $"/NewDataSet/KhachHang[contains(Tenkhachhang, '{tenKH}')]"; // XPath tìm kiếm
+            taoXML.TimKiem(fileXML, xmlXPath, dataGridView2);
+
+            // Tìm kiếm bằng XSLT và biến đổi XML thành HTML
+            taoXML.TimKiemXSLT(tenKH, fileXML, tenfileXSLT);
+        }
+
+        private void LoadKH()
+        {
+            try
+            {
+                using (var connection = new SqlConnection(strCon))
+                {
+                    connection.Open();
+                    string sql = "SELECT * FROM KhachHang"; // Truy vấn để lấy dữ liệu
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    dataGridView2.DataSource = dt; // Hiển thị dữ liệu lên DataGridView
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            QLTaiKhoan qLTaiKhoan = new QLTaiKhoan();
+            qLTaiKhoan.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            QLKhachHang qliKH = new QLKhachHang();
+            qliKH.Show();
+            this.Hide();
+        }
+
+        
     }
 }

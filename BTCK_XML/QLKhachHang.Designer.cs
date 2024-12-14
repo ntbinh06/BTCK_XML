@@ -317,6 +317,7 @@ namespace BTCK_XML
             this.Controls.Add(this.groupBox1);
             this.Name = "QLKhachHang";
             this.Text = "QLKhachHang";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QLKhachHang_FormClosed);
             this.Load += new System.EventHandler(this.QLKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
