@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLNhanVien));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpNgaysinh = new System.Windows.Forms.DateTimePicker();
             this.txtSdt = new System.Windows.Forms.TextBox();
@@ -50,6 +47,8 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -96,7 +95,6 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.ImageKey = "(none)";
             this.btnThoat.Location = new System.Drawing.Point(667, 20);
@@ -110,7 +108,6 @@
             // 
             // btn_Xoa
             // 
-            this.btn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Image")));
             this.btn_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Xoa.ImageKey = "(none)";
             this.btn_Xoa.Location = new System.Drawing.Point(461, 20);
@@ -121,37 +118,6 @@
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.Image = ((System.Drawing.Image)(resources.GetObject("btn_Sua.Image")));
-            this.btn_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Sua.ImageKey = "(none)";
-            this.btn_Sua.Location = new System.Drawing.Point(264, 20);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Sua.Size = new System.Drawing.Size(102, 43);
-            this.btn_Sua.TabIndex = 1;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Them.Image = ((System.Drawing.Image)(resources.GetObject("btn_Them.Image")));
-            this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Them.ImageKey = "(none)";
-            this.btn_Them.Location = new System.Drawing.Point(80, 20);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Them.Size = new System.Drawing.Size(102, 43);
-            this.btn_Them.TabIndex = 0;
-            this.btn_Them.Text = "Tạo mới";
-            this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Them.UseVisualStyleBackColor = true;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // groupBox1
             // 
@@ -286,6 +252,35 @@
             this.label1.Text = "Quản lý nhân viên";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btn_Sua
+            // 
+            this.btn_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Sua.ImageKey = "(none)";
+            this.btn_Sua.Location = new System.Drawing.Point(264, 20);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Sua.Size = new System.Drawing.Size(102, 43);
+            this.btn_Sua.TabIndex = 1;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Them.ImageKey = "(none)";
+            this.btn_Them.Location = new System.Drawing.Point(80, 20);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Them.Size = new System.Drawing.Size(102, 43);
+            this.btn_Them.TabIndex = 0;
+            this.btn_Them.Text = "Tạo mới";
+            this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            // 
             // QLNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,6 +292,7 @@
             this.Controls.Add(this.label1);
             this.Name = "QLNhanVien";
             this.Text = "QLNhanVien";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QLNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.QLNhanVien_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -314,7 +310,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSdt;
@@ -331,5 +326,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpNgaysinh;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_Sua;
     }
 }

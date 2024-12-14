@@ -8,7 +8,7 @@ namespace BTCK_XML
 {
     public partial class QLKhachHang : Form
     {
-        private string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        private string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "KhachHang.xml");
         private TaoXML taoXML = new TaoXML();
 
@@ -153,6 +153,8 @@ namespace BTCK_XML
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
+            Home Home = new Home();
+            Home.Show();
             this.Close();
         }
 
@@ -251,6 +253,12 @@ namespace BTCK_XML
             {
                 MessageBox.Show("Lỗi khi xóa: " + ex.Message);
             }
+        }
+
+        private void QLKhachHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Home trangchu = new Home();
+            trangchu.Show();
         }
     }
 }

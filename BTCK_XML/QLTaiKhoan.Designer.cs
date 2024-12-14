@@ -35,6 +35,7 @@ namespace BTCK_XML
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxQuyen = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@ namespace BTCK_XML
             this.label_DiaChi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cbxQuyen = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -136,6 +136,14 @@ namespace BTCK_XML
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
             // 
+            // cbxQuyen
+            // 
+            this.cbxQuyen.FormattingEnabled = true;
+            this.cbxQuyen.Location = new System.Drawing.Point(573, 58);
+            this.cbxQuyen.Name = "cbxQuyen";
+            this.cbxQuyen.Size = new System.Drawing.Size(224, 28);
+            this.cbxQuyen.TabIndex = 12;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -217,14 +225,6 @@ namespace BTCK_XML
             this.dataGridView1.Size = new System.Drawing.Size(890, 173);
             this.dataGridView1.TabIndex = 13;
             // 
-            // cbxQuyen
-            // 
-            this.cbxQuyen.FormattingEnabled = true;
-            this.cbxQuyen.Location = new System.Drawing.Point(573, 58);
-            this.cbxQuyen.Name = "cbxQuyen";
-            this.cbxQuyen.Size = new System.Drawing.Size(224, 28);
-            this.cbxQuyen.TabIndex = 12;
-            // 
             // QLTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,6 +236,7 @@ namespace BTCK_XML
             this.Controls.Add(this.groupBox1);
             this.Name = "QLTaiKhoan";
             this.Text = "QLTaiKhoan";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QLTaiKhoan_FormClosing);
             this.Load += new System.EventHandler(this.QLTaiKhoan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

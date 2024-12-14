@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSHoaDon));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ccbKhachhang = new System.Windows.Forms.ComboBox();
@@ -230,7 +229,6 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.ImageKey = "(none)";
             this.btnThoat.Location = new System.Drawing.Point(667, 20);
@@ -244,7 +242,6 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.ImageKey = "(none)";
             this.btnXoa.Location = new System.Drawing.Point(461, 20);
@@ -258,7 +255,6 @@
             // 
             // btnSua
             // 
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.ImageKey = "(none)";
             this.btnSua.Location = new System.Drawing.Point(264, 20);
@@ -272,7 +268,6 @@
             // 
             // btnThem
             // 
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.ImageKey = "(none)";
             this.btnThem.Location = new System.Drawing.Point(80, 20);
@@ -319,6 +314,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DSHoaDon";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DSHoaDon_FormClosing);
             this.Load += new System.EventHandler(this.DSHoaDon_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -416,5 +416,11 @@ namespace BTCK_XML
             Home.Show();
             this.Hide();
         }
+
+        private void DSHoaDon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Home trangchu = new Home();
+            trangchu.Show();
+        }
     }
 }

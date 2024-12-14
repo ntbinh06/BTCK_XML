@@ -254,6 +254,12 @@ namespace BTCK_XML
         {
 
         }
+
+        private void QLNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Home trangchu = new Home();
+            trangchu.Show();
+        }
     }
 
 

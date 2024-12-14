@@ -234,6 +234,9 @@ namespace BTCK_XML
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+            Home Home = new Home();
+            Home.Show();
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -252,6 +255,12 @@ namespace BTCK_XML
             {
                 MessageBox.Show("Lỗi khi chọn tài khoản: " + ex.Message);
             }
+        }
+
+        private void QLTaiKhoan_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Home trangchu = new Home();
+            trangchu.Show();
         }
     }
 }
