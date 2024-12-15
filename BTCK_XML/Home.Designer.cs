@@ -234,6 +234,7 @@
             this.bearCute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bearCute.TabIndex = 8;
             this.bearCute.TabStop = false;
+            this.bearCute.Click += new System.EventHandler(this.bearCute_Click);
             // 
             // pictureBox3
             // 
@@ -446,7 +447,6 @@
             this.dataGridViewHD.RowTemplate.Height = 24;
             this.dataGridViewHD.Size = new System.Drawing.Size(793, 220);
             this.dataGridViewHD.TabIndex = 19;
-            this.dataGridViewHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHD_CellContentClick);
             // 
             // groupBox5
             // 

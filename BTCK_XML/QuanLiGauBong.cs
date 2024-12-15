@@ -10,7 +10,7 @@ namespace BTCK_XML
 {
     public partial class QuanLiGauBong : Form
     {
-        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
         private string fileXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "gaubong.xml");
         private string danhMucXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "danhmuc.xml");

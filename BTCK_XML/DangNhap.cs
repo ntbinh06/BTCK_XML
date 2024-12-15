@@ -7,7 +7,7 @@ namespace BTCK_XML
     public partial class DangNhap : Form
     {
         // Chuỗi kết nối tới cơ sở dữ liệu
-        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
 
         public DangNhap()
         {
