@@ -257,6 +257,35 @@ namespace BTCK_XML
         {
             // Tải dữ liệu từ tệp XML vào DataGridView
             DataTable dt = taoXML.loadDataGridView(fileXML);
+            // Thêm cột Thành Tiền vào DataTable
+            dt.Columns.Add("Thanhtien", typeof(decimal));
+
+            // Kết nối đến cơ sở dữ liệu
+            using (var connection = new SqlConnection(strCon))
+            {
+                connection.Open();
+
+                // Lặp qua từng hàng để tính toán giá trị thành tiền
+                foreach (DataRow row in dt.Rows)
+                {
+                    string tengaubong = row["Tengaubong"].ToString();
+
+                    // Lấy giá của sản phẩm từ cơ sở dữ liệu
+                    string sqlGetGia = "SELECT Gia FROM GauBong WHERE Tengaubong = @Tengaubong";
+                    SqlCommand cmdGetGia = new SqlCommand(sqlGetGia, connection);
+                    cmdGetGia.Parameters.AddWithValue("@Tengaubong", tengaubong);
+
+                    // Thực thi truy vấn và lấy giá
+                    decimal gia = (decimal)cmdGetGia.ExecuteScalar();
+
+                    // Tính thành tiền
+                    int soluong = Convert.ToInt32(row["Soluongmua"]);
+                    decimal thanhtien = soluong * gia;
+
+                    // Gán giá trị thành tiền vào cột mới
+                    row["Thanhtien"] = thanhtien;
+                }
+            }
             dataGridViewHD.DataSource = dt;
         }
 
@@ -434,6 +463,9 @@ namespace BTCK_XML
             this.Hide();
         }
 
-        
+        private void dataGridViewHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
