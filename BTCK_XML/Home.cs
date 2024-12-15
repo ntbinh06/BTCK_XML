@@ -299,7 +299,7 @@ namespace BTCK_XML
 
         private void btnTimKiemMaGau_Click(object sender, EventArgs e)
         {
-            string maGau = txtMaGau.Text.Trim(); // TextBox for searching teddy bear by code
+            string maGau = txtMaGau.Text.Trim(); // Lấy mã gấu bông từ TextBox
             string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xml");
             string tenfileXSLT = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xslt");
 
@@ -309,30 +309,37 @@ namespace BTCK_XML
                 return;
             }
 
-            string xmlXPath = $"/NewDataSet/GauBong[Magaubong[text()='{maGau}']]"; // XPath to search
+            // XPath để tìm chính xác mã gấu bông
+            string xmlXPath = $"/NewDataSet/GauBong[normalize-space(Magaubong)='{maGau}']";
+
+            // Gọi hàm tìm kiếm và hiển thị kết quả trên DataGridView
             taoXML.TimKiem(fileXML, xmlXPath, dataGridViewGauBong);
 
-            // Optional: Perform XSLT transformation if required
+            // Gọi hàm tìm kiếm bằng XSLT và tạo file HTML
             taoXML.TimKiemXSLT(maGau, fileXML, tenfileXSLT);
         }
 
+
         private void btnTimKiemTenGau_Click(object sender, EventArgs e)
         {
-            string tenGau = txtTenGau.Text.Trim(); // TextBox for searching teddy bear by name
+            string tenGau = txtTenGau.Text.Trim();
             string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xml");
+            string tenfileXSLT = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "GauBong.xslt");
 
+            // Kiểm tra tên gấu bông
             if (string.IsNullOrWhiteSpace(tenGau))
             {
                 MessageBox.Show("Vui lòng nhập tên gấu bông để tìm kiếm.");
                 return;
             }
 
-            string xmlXPath = $"/NewDataSet/GauBong[Tengaubong[contains(text(),'{tenGau}')]]"; // XPath to search
-            taoXML.TimKiem(fileXML, xmlXPath, dataGridViewGauBong);
-        }
-    
+            // Gọi hàm tìm kiếm và tạo file HTML
+            taoXML.TimKiemXSLT(tenGau, fileXML, tenfileXSLT);
 
-    private void LoadGauBongData()
+        }
+
+
+        private void LoadGauBongData()
         {
             try
             {
