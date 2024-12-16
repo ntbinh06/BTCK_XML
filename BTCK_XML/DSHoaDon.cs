@@ -71,8 +71,40 @@ namespace BTCK_XML
         }
         private void LoadData()
         {
-            // Tải dữ liệu từ tệp XML vào DataGridView
+            // Tải dữ liệu từ tệp XML vào DataTable
             DataTable dt = taoXML.loadDataGridView(fileXML);
+
+            // Thêm cột Thành Tiền vào DataTable
+            dt.Columns.Add("Thanhtien", typeof(decimal));
+
+            // Kết nối đến cơ sở dữ liệu
+            using (var connection = new SqlConnection(strCon))
+            {
+                connection.Open();
+
+                // Lặp qua từng hàng để tính toán giá trị thành tiền
+                foreach (DataRow row in dt.Rows)
+                {
+                    string tengaubong = row["Tengaubong"].ToString();
+
+                    // Lấy giá của sản phẩm từ cơ sở dữ liệu
+                    string sqlGetGia = "SELECT Gia FROM GauBong WHERE Tengaubong = @Tengaubong";
+                    SqlCommand cmdGetGia = new SqlCommand(sqlGetGia, connection);
+                    cmdGetGia.Parameters.AddWithValue("@Tengaubong", tengaubong);
+
+                    // Thực thi truy vấn và lấy giá
+                    decimal gia = (decimal)cmdGetGia.ExecuteScalar();
+
+                    // Tính thành tiền
+                    int soluong = Convert.ToInt32(row["Soluongmua"]);
+                    decimal thanhtien = soluong * gia;
+
+                    // Gán giá trị thành tiền vào cột mới
+                    row["Thanhtien"] = thanhtien;
+                }
+            }
+
+            // Gán DataTable cho DataGridView
             dataGridView1.DataSource = dt;
         }
         private void LoadComboBoxData()
@@ -130,6 +162,9 @@ namespace BTCK_XML
                 string Soluongmua = taoXML.LayGiaTri(fileXML, "Mahoadon", maHD, "Soluongmua");
                 string Tennhanvien = taoXML.LayGiaTri(fileXML, "Mahoadon", maHD, "Tennhanvien");
 
+                // Lấy giá trị Thành tiền từ DataGridView
+                decimal thanhtien = (decimal)dataGridView1.Rows[e.RowIndex].Cells["Thanhtien"].Value;
+
                 // Fill controls with fetched data
                 txtMahoadon.Text = maHD;
 
@@ -152,10 +187,11 @@ namespace BTCK_XML
                 // Set the selected index for employees
                 cbbNhanvien.SelectedValue = cbbNhanvien.Items.Cast<DataRowView>()
                     .FirstOrDefault(item => item["Tennhanvien"].ToString() == Tennhanvien)?["Manhanvien"];
+
+                // Hiển thị giá trị Thành tiền vào txtThanhTien
+                txtThanhTien.Text = thanhtien.ToString("C"); // Định dạng tiền tệ
             }
         }
-
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
@@ -167,16 +203,37 @@ namespace BTCK_XML
                     return;
                 }
 
+                // Khai báo biến để lưu giá bán
+                decimal gia = 0;
+
+                // Lấy giá của sản phẩm từ cơ sở dữ liệu
+                using (var connection = new SqlConnection(strCon))
+                {
+                    connection.Open();
+                    string sqlGetGia = "SELECT Gia FROM GauBong WHERE Magaubong = @Magaubong";
+                    SqlCommand cmdGetGia = new SqlCommand(sqlGetGia, connection);
+                    cmdGetGia.Parameters.AddWithValue("@Magaubong", cbbSanpham.SelectedValue);
+                    gia = (decimal)cmdGetGia.ExecuteScalar();
+                }
+
+                // Tính thành tiền
+                decimal thanhtien = soluong * gia;
+
+                // Hiển thị thành tiền lên TextBox
+                txtThanhTien.Text = thanhtien.ToString("C"); // C để định dạng tiền tệ
+
                 // Tạo phần tử XML
                 XElement newHoaDon = new XElement("HoaDon",
                     new XElement("Mahoadon", txtMahoadon.Text.Trim()),
-                    new XElement("Tenkhachhang", ccbKhachhang.Text.Trim()), 
+                    new XElement("Tenkhachhang", ccbKhachhang.Text.Trim()),
                     new XElement("Tengaubong", cbbSanpham.Text.Trim()),
                     new XElement("Ngaydathang", dtpNgaydat.Value.ToString("yyyy-MM-dd")),
                     new XElement("Noigiaohang", txtNoigiaohang.Text.Trim()),
                     new XElement("Soluongmua", soluong),
+                    new XElement("Thanhtien", thanhtien),  // Thêm trường Thành tiền
                     new XElement("Tennhanvien", cbbNhanvien.Text.Trim())
-                    );
+                );
+
                 // Kiểm tra xem tệp XML có tồn tại không
                 if (System.IO.File.Exists(fileXML))
                 {
@@ -217,7 +274,7 @@ namespace BTCK_XML
                             cmdInsertCTHoaDon.Transaction = transaction;
                             cmdInsertCTHoaDon.Parameters.AddWithValue("@Mahoadon", txtMahoadon.Text.Trim());
                             cmdInsertCTHoaDon.Parameters.AddWithValue("@Magaubong", cbbSanpham.SelectedValue);
-                            cmdInsertCTHoaDon.Parameters.AddWithValue("@Soluongmua", int.Parse(txtSoluong.Text.Trim()));
+                            cmdInsertCTHoaDon.Parameters.AddWithValue("@Soluongmua", soluong);
                             cmdInsertCTHoaDon.ExecuteNonQuery();
 
                             // Xác nhận giao dịch
@@ -232,6 +289,7 @@ namespace BTCK_XML
                             dtpNgaydat.Text = "";
                             txtNoigiaohang.Text = "";
                             txtSoluong.Text = "";
+                            txtThanhTien.Text = ""; // Reset thành tiền
                             cbbNhanvien.Text = "";
 
                             LoadData();
@@ -250,9 +308,6 @@ namespace BTCK_XML
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
-
-
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -313,6 +368,39 @@ namespace BTCK_XML
                     return;
                 }
 
+                int soluong;
+                if (!int.TryParse(txtSoluong.Text.Trim(), out soluong))
+                {
+                    MessageBox.Show("Số lượng không hợp lệ!");
+                    return;
+                }
+
+                decimal gia = 0;
+
+                // Get the price of the selected product
+                using (var connection = new SqlConnection(strCon))
+                {
+                    connection.Open();
+                    string sqlGetGia = "SELECT Gia FROM GauBong WHERE Magaubong = @Magaubong";
+                    using (var cmdGetGia = new SqlCommand(sqlGetGia, connection))
+                    {
+                        cmdGetGia.Parameters.AddWithValue("@Magaubong", cbbSanpham.SelectedValue?.ToString().Trim());
+                        object result = cmdGetGia.ExecuteScalar();
+                        if (result != null)
+                        {
+                            gia = (decimal)result;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy giá cho sản phẩm đã chọn.");
+                            return;
+                        }
+                    }
+                }
+
+                // Calculate the total amount (thanhtien)
+                decimal thanhtien = soluong * gia; // Calculate thanhtien
+
                 using (var connection = new SqlConnection(strCon))
                 {
                     connection.Open();
@@ -339,13 +427,6 @@ namespace BTCK_XML
                             MessageBox.Show("Không tìm thấy hóa đơn với mã: " + txtMahoadon.Text);
                             return;
                         }
-                        else
-                        {
-                            LoadData();
-
-                            // Optionally, update the XML file if needed
-                            taoXML.taoXML("SELECT HoaDon.Mahoadon, KhachHang.Tenkhachhang, GauBong.Tengaubong, HoaDon.Ngaydathang, HoaDon.Noigiaohang, CTHoaDon.Soluongmua, NhanVien.Tennhanvien \r\nFROM HoaDon INNER JOIN CTHoaDon ON HoaDon.Mahoadon = CTHoaDon.Mahoadon \r\n          INNER JOIN NhanVien ON HoaDon.Manhanvien = NhanVien.Manhanvien\r\n           INNER JOIN GauBong ON CTHoaDon.Magaubong = GauBong.Magaubong\r\n\t\t   INNER JOIN KhachHang ON HoaDon.Makhachhang = KhachHang.Makhachhang", "HoaDon", fileXML);
-                        }
                     }
 
                     // Update query for CTHoaDon table
@@ -357,7 +438,7 @@ namespace BTCK_XML
                         // Parameters for CTHoaDon update
                         cmdUpdateCTHoaDon.Parameters.AddWithValue("@Mahoadon", txtMahoadon.Text.Trim());
                         cmdUpdateCTHoaDon.Parameters.AddWithValue("@Magaubong", cbbSanpham.SelectedValue?.ToString().Trim()); // Product ID
-                        cmdUpdateCTHoaDon.Parameters.AddWithValue("@Soluongmua", txtSoluong.Text.Trim()); // Quantity
+                        cmdUpdateCTHoaDon.Parameters.AddWithValue("@Soluongmua", soluong); // Quantity
 
                         // Execute the CTHoaDon update query
                         int rowsAffectedCTHoaDon = cmdUpdateCTHoaDon.ExecuteNonQuery();
@@ -367,14 +448,30 @@ namespace BTCK_XML
                             MessageBox.Show("Không tìm thấy chi tiết hóa đơn với mã: " + txtMahoadon.Text);
                             return;
                         }
+                    }
+
+                    // Cập nhật phần tử <Thanhtien> trong XML
+                    string sqlXPath = $"/NewDataSet/HoaDon[Mahoadon='{txtMahoadon.Text.Trim()}']";
+                    XDocument doc = XDocument.Load(fileXML);
+                    var existingHoaDon = doc.Descendants("HoaDon")
+                        .FirstOrDefault(hd => hd.Element("Mahoadon")?.Value == txtMahoadon.Text.Trim());
+
+                    if (existingHoaDon != null)
+                    {
+                        // Tìm và cập nhật phần tử <Thanhtien>
+                        var existingThanhtien = existingHoaDon.Element("Thanhtien");
+                        if (existingThanhtien != null)
+                        {
+                            existingThanhtien.Value = thanhtien.ToString("F2"); // Cập nhật giá trị
+                        }
                         else
                         {
-                            LoadData();
-
-                            // Optionally, update the XML file if needed
-                            taoXML.taoXML("SELECT HoaDon.Mahoadon, KhachHang.Tenkhachhang, GauBong.Tengaubong, HoaDon.Ngaydathang, HoaDon.Noigiaohang, CTHoaDon.Soluongmua, NhanVien.Tennhanvien \r\nFROM HoaDon INNER JOIN CTHoaDon ON HoaDon.Mahoadon = CTHoaDon.Mahoadon \r\n          INNER JOIN NhanVien ON HoaDon.Manhanvien = NhanVien.Manhanvien\r\n           INNER JOIN GauBong ON CTHoaDon.Magaubong = GauBong.Magaubong\r\n\t\t   INNER JOIN KhachHang ON HoaDon.Makhachhang = KhachHang.Makhachhang", "HoaDon", fileXML);
+                            // Nếu không có phần tử <Thanhtien>, thêm mới
+                            existingHoaDon.Add(new XElement("Thanhtien", thanhtien.ToString("F2")));
                         }
                     }
+
+                    doc.Save(fileXML); // Lưu lại vào tệp XML
 
                     // If both updates are successful, notify the user
                     MessageBox.Show("Cập nhật thông tin hóa đơn và chi tiết thành công!");
@@ -398,8 +495,6 @@ namespace BTCK_XML
             }
         }
 
-
-
         private void DSHoaDon_Load_1(object sender, EventArgs e)
         {
 
@@ -418,6 +513,11 @@ namespace BTCK_XML
         {
             Home trangchu = new Home();
             trangchu.Show();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
