@@ -10,10 +10,10 @@ namespace BTCK_XML
 {
     public partial class QuanLiGauBong : Form
     {
-        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
-        private string fileXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "gaubong.xml");
-        private string danhMucXML = Path.Combine("F:\\124\\XML\\BaiTapLonCK", "danhmuc.xml");
+        private string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "gaubong.xml");
+        private string danhMucXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "danhmuc.xml");
 
         public QuanLiGauBong()
         {
@@ -293,11 +293,14 @@ namespace BTCK_XML
 
 
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home home = new Home();
+            home.Show();
+            
+        }
     }
 }

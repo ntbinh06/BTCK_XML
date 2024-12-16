@@ -233,9 +233,9 @@ namespace BTCK_XML
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
             Home Home = new Home();
             Home.Show();
+            this.Hide();
 
         }
 

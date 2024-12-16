@@ -127,7 +127,7 @@
             this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(962, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -135,19 +135,19 @@
             // trangChủToolStripMenuItem
             // 
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
             // 
             // giớiThiệuToolStripMenuItem
             // 
             this.giớiThiệuToolStripMenuItem.Name = "giớiThiệuToolStripMenuItem";
-            this.giớiThiệuToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.giớiThiệuToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
             this.giớiThiệuToolStripMenuItem.Text = "Giới thiệu";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // label1
@@ -155,7 +155,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lí gấu bông";
             // 
@@ -164,7 +164,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(351, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Quản lí nhân viên";
             // 
@@ -173,7 +173,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(544, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 16);
+            this.label3.Size = new System.Drawing.Size(131, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Quản lí khách hàng";
             // 
@@ -182,7 +182,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(172, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 16);
+            this.label4.Size = new System.Drawing.Size(109, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Quản lí hóa đơn";
             // 
@@ -221,7 +221,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(745, 46);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 16);
+            this.label17.Size = new System.Drawing.Size(119, 17);
             this.label17.TabIndex = 9;
             this.label17.Text = "Quản lý tài khoản";
             // 
@@ -234,6 +234,7 @@
             this.bearCute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bearCute.TabIndex = 8;
             this.bearCute.TabStop = false;
+            this.bearCute.Click += new System.EventHandler(this.bearCute_Click);
             // 
             // pictureBox3
             // 

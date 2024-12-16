@@ -155,7 +155,7 @@ namespace BTCK_XML
         {
             Home Home = new Home();
             Home.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnSua_Click(object sender, EventArgs e)

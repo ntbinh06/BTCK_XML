@@ -76,7 +76,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(254, 31);
             this.txtName.TabIndex = 3;
-         
             // 
             // txtPass
             // 
@@ -85,14 +84,13 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(254, 32);
             this.txtPass.TabIndex = 4;
- 
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(380, 276);
+            this.btnLogin.Location = new System.Drawing.Point(475, 276);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(116, 43);
+            this.btnLogin.Size = new System.Drawing.Size(137, 43);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -101,9 +99,9 @@
             // btnLogout
             // 
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(536, 276);
+            this.btnLogout.Location = new System.Drawing.Point(657, 276);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(116, 43);
+            this.btnLogout.Size = new System.Drawing.Size(131, 43);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Thoát";
             this.btnLogout.UseVisualStyleBackColor = true;

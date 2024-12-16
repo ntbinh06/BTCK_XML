@@ -17,7 +17,7 @@ namespace BTCK_XML
 {
     public partial class QLNhanVien : Form
     {
-        private string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        private string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         private TaoXML taoXML = new TaoXML();
         private string fileXML = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Nhanvien.xml");
 
@@ -256,9 +256,11 @@ namespace BTCK_XML
 
         private void QLNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Home trangchu = new Home();
-            trangchu.Show();
+            Home home = new Home();
+            home.Show();
         }
+
+      
     }
 
 

@@ -15,7 +15,7 @@ namespace BTCK_XML
 {
     internal class TaoXML
     {
-        string strCon = "Data Source=DESKTOP-NLSH69G\\OANH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
         public void taoXML(string sql, string bang, string _FileXML)
         {
             using (SqlConnection con = new SqlConnection(strCon))
@@ -33,16 +33,15 @@ namespace BTCK_XML
         {
             DataTable dt = new DataTable();
 
-            // Kiểm tra xem tệp có tồn tại không
             if (!File.Exists(filePath))
             {
                 MessageBox.Show("File không tồn tại");
-                return dt; // Trả về DataTable rỗng
+                return dt;
             }
 
             try
             {
-                // Đọc dữ liệu từ tệp XML vào DataTable
+             
                 dt.ReadXml(filePath);
             }
             catch (Exception ex)
@@ -145,7 +144,6 @@ namespace BTCK_XML
                 ds.ReadXml(nr);
             }
 
-            // Kiểm tra xem DataTable có dữ liệu không
             if (ds.Tables.Count > 0)
             {
                 dgv.DataSource = ds.Tables[0];
@@ -192,7 +190,8 @@ namespace BTCK_XML
 
             if (dem == 0)
             {
-                txtMa = tienTo + "001"; // HD001
+                txtMa = tienTo + "001";
+
             }
             else
             {
@@ -215,7 +214,7 @@ namespace BTCK_XML
                 if (dt.Rows[i][cotMa].ToString().Trim().Equals(ma))
                 {
                     kt = false;
-                    break; // Thoát vòng lặp nếu tìm thấy
+                    break; 
                 }
             }
 
@@ -231,11 +230,11 @@ namespace BTCK_XML
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(com))
                     {
-                        adapter.Fill(dt); // Điền dữ liệu vào DataTable
+                        adapter.Fill(dt); 
                     }
                 }
             }
-            return dt; // Trả về DataTable chứa kết quả
+            return dt; 
         }
         public void exCuteNonQuery(string sql)
         {
@@ -268,17 +267,16 @@ namespace BTCK_XML
         {
             string duongDan = _FileXML;
             DataTable table = loadDataGridView(duongDan);
-            int dong = table.Rows.Count - 1; // Lấy dòng cuối cùng
+            int dong = table.Rows.Count - 1; 
 
-            // Tạo câu lệnh SQL để thêm dữ liệu
             string sql = "INSERT INTO " + tenBang + " VALUES (";
 
             for (int j = 0; j < table.Columns.Count -1; j++)
             {
-                // Kiểm tra xem cột hiện tại có phải là cột ngày tháng không (giả sử là cột thứ 4)
-                if (j == 3) // Cột thứ 4 (Ngaysinh)
+
+                if (j == 3)
                 {
-                    // Chuyển đổi giá trị ngày tháng sang định dạng phù hợp
+
                     sql += "'" + Convert.ToDateTime(table.Rows[dong][j]).ToString("yyyy-MM-dd") + "', ";
                 }
                 else
@@ -288,7 +286,6 @@ namespace BTCK_XML
             }
             sql += "N'" + table.Rows[dong][table.Columns.Count - 1].ToString().Trim() + "'"; 
             sql += ")";
-            // Thực thi câu lệnh SQL
             exCuteNonQuery(sql);
         }
         public void Sua_Database(string tableName, string _FileXML, string columnName, string value)
@@ -297,7 +294,6 @@ namespace BTCK_XML
             DataTable table = loadDataGridView(filePath);
             int rowIndex = -1;
 
-            // Find the row with the value to be updated
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if (table.Rows[i][columnName].ToString().Trim() == value)
@@ -311,14 +307,12 @@ namespace BTCK_XML
             {
                 string sql = $"UPDATE {tableName} SET ";
 
-                // Build the SQL query by iterating through the columns
                 for (int j = 0; j < table.Columns.Count; j++)
                 {
 
                      columnName = table.Columns[j].ColumnName;
                     string columnValue = table.Rows[rowIndex][j].ToString().Trim();
 
-                    // Handle data types accordingly
                     if (table.Columns[j].DataType == typeof(DateTime))
                     {
                         DateTime dateValue = Convert.ToDateTime(columnValue);
@@ -333,7 +327,6 @@ namespace BTCK_XML
                         }
                         else
                         {
-                            // Handle invalid integer values
                             MessageBox.Show($"Invalid value for column '{columnName}'. Please check the data.");
                             return;
                         }
@@ -344,13 +337,10 @@ namespace BTCK_XML
                     }
                 }
 
-                // Remove the trailing comma and space
                 sql = sql.TrimEnd(',', ' ');
 
-                // Add the WHERE clause
                 sql += $" WHERE {columnName} = '{value}'";
 
-                // Execute the SQL query
                 exCuteNonQuery(sql);
             }
         }
@@ -366,7 +356,7 @@ namespace BTCK_XML
                 if (table.Rows[i][tenCot].ToString().Trim() == giaTri)
                 {
                     dong = i;
-                    break; // Thoát vòng lặp khi tìm thấy
+                    break; 
                 }
             }
 
@@ -398,27 +388,19 @@ namespace BTCK_XML
 
         public void TimKiemXSLT(string data, string tenFileXML, string tenfileXSLT)
         {
-            // Tạo đối tượng XslCompiledTransform
             XslCompiledTransform xslt = new XslCompiledTransform();
 
-            // Tải tệp XSLT
-            xslt.Load(tenfileXSLT); // Không thêm ".xslt" ở đây
+            xslt.Load(tenfileXSLT); 
 
-            // Tạo danh sách tham số cho XSLT
             XsltArgumentList argList = new XsltArgumentList();
             argList.AddParam("Data", "", data);
 
-            // Tạo XmlWriter để ghi tệp HTML đầu ra
-            using (XmlWriter writer = XmlWriter.Create(tenFileXML.Replace(".xml", ".html"))) // Đổi tên tệp đầu ra
+            using (XmlWriter writer = XmlWriter.Create(tenFileXML.Replace(".xml", ".html"))) 
             {
-                xslt.Transform(new XPathDocument(tenFileXML), argList, writer); // Biến đổi XML thành HTML
+                xslt.Transform(new XPathDocument(tenFileXML), argList, writer);
             }
 
-            // Mở tệp HTML đã tạo trong trình duyệt
             System.Diagnostics.Process.Start(tenFileXML.Replace(".xml", ".html"));
         }
-
-
-       
     }
 }
