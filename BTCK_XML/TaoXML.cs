@@ -15,11 +15,7 @@ namespace BTCK_XML
 {
     internal class TaoXML
     {
-<<<<<<< HEAD
         string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
-=======
-        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
->>>>>>> 765a2120cd316b05c7ff62b15ff543aeb55eda25
         public void taoXML(string sql, string bang, string _FileXML)
         {
             using (SqlConnection con = new SqlConnection(strCon))
