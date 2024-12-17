@@ -9,11 +9,7 @@ namespace BTCK_XML
 {
     public partial class Home : Form
     {
-<<<<<<< HEAD
         string strCon = "Data Source=DESKTOP-PMTVGB7\\MSSQLTHAO;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
-=======
-        string strCon = "Data Source=LAPTOP-HF76ABDE\\BINH;Initial Catalog=dbQUANLYCUAHANGGAUBONG;Integrated Security=True";
->>>>>>> 765a2120cd316b05c7ff62b15ff543aeb55eda25
         private TaoXML taoXML = new TaoXML();
         public Home()
         {
@@ -405,13 +401,9 @@ namespace BTCK_XML
 
         private void bearCute_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+            QuanLiGauBong qligaubong = new QuanLiGauBong();
+            qligaubong.Show();
             this.Hide();
-            QuanLiGauBong quanLiGauBong = new QuanLiGauBong();
-            quanLiGauBong.Show();
-=======
->>>>>>> 765a2120cd316b05c7ff62b15ff543aeb55eda25
-
         }
     }
 }
