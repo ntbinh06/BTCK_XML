@@ -93,14 +93,26 @@ namespace BTCK_XML
                     cmdGetGia.Parameters.AddWithValue("@Tengaubong", tengaubong);
 
                     // Thực thi truy vấn và lấy giá
-                    decimal gia = (decimal)cmdGetGia.ExecuteScalar();
+                    object result = cmdGetGia.ExecuteScalar();
 
-                    // Tính thành tiền
-                    int soluong = Convert.ToInt32(row["Soluongmua"]);
-                    decimal thanhtien = soluong * gia;
+                    if (result != null)
+                    {
+                        // Chuyển đổi giá trị về decimal nếu không null
+                        decimal gia = (decimal)result;
 
-                    // Gán giá trị thành tiền vào cột mới
-                    row["Thanhtien"] = thanhtien;
+                        // Tính thành tiền
+                        int soluong = Convert.ToInt32(row["Soluongmua"]);
+                        decimal thanhtien = soluong * gia;
+
+                        // Gán giá trị thành tiền vào cột mới
+                        row["Thanhtien"] = thanhtien;
+                    }
+                    else
+                    {
+                        // Nếu không tìm thấy giá, gán giá trị mặc định (0 hoặc xử lý khác)
+                        row["Thanhtien"] = 0; // Hoặc có thể hiển thị thông báo
+                                              // MessageBox.Show($"Không tìm thấy giá cho sản phẩm: {tengaubong}");
+                    }
                 }
             }
 
@@ -356,13 +368,13 @@ namespace BTCK_XML
         {
             try
             {
-                // Check if required fields are filled
+                // Kiểm tra nếu các trường bắt buộc đã được điền
                 if (string.IsNullOrWhiteSpace(txtMahoadon.Text) ||
                     string.IsNullOrWhiteSpace(txtNoigiaohang.Text) ||
                     string.IsNullOrWhiteSpace(txtSoluong.Text) ||
-                    ccbKhachhang.SelectedValue == null || // Ensure customer is selected
-                    cbbNhanvien.SelectedValue == null || // Ensure employee is selected
-                    cbbSanpham.SelectedValue == null) // Ensure product is selected
+                    ccbKhachhang.SelectedValue == null ||
+                    cbbNhanvien.SelectedValue == null ||
+                    cbbSanpham.SelectedValue == null)
                 {
                     MessageBox.Show("Hãy nhập đầy đủ thông tin cần sửa và chọn khách hàng, nhân viên, sản phẩm!");
                     return;
@@ -377,7 +389,7 @@ namespace BTCK_XML
 
                 decimal gia = 0;
 
-                // Get the price of the selected product
+                // Lấy giá của sản phẩm đã chọn
                 using (var connection = new SqlConnection(strCon))
                 {
                     connection.Open();
@@ -398,30 +410,27 @@ namespace BTCK_XML
                     }
                 }
 
-                // Calculate the total amount (thanhtien)
-                decimal thanhtien = soluong * gia; // Calculate thanhtien
+                // Tính tổng tiền
+                decimal thanhtien = soluong * gia;
 
                 using (var connection = new SqlConnection(strCon))
                 {
                     connection.Open();
 
-                    // Update query for HoaDon table
+                    // Cập nhật thông tin hóa đơn
                     string sqlUpdateHoaDon = "UPDATE HoaDon SET Makhachhang = @Makhachhang, " +
-                                             "Manhanvien = @Manhanvien, Ngaydathang = @Ngaydathang, Noigiaohang = @Noigiaohang " +
-                                             "WHERE Mahoadon = @Mahoadon";
+                                              "Manhanvien = @Manhanvien, Ngaydathang = @Ngaydathang, Noigiaohang = @Noigiaohang " +
+                                              "WHERE Mahoadon = @Mahoadon";
 
                     using (var cmdUpdateHoaDon = new SqlCommand(sqlUpdateHoaDon, connection))
                     {
-                        // Parameters for HoaDon update
                         cmdUpdateHoaDon.Parameters.AddWithValue("@Mahoadon", txtMahoadon.Text.Trim());
-                        cmdUpdateHoaDon.Parameters.AddWithValue("@Makhachhang", ccbKhachhang.SelectedValue.ToString().Trim()); // Customer ID
-                        cmdUpdateHoaDon.Parameters.AddWithValue("@Manhanvien", cbbNhanvien.SelectedValue.ToString().Trim()); // Employee ID
-                        cmdUpdateHoaDon.Parameters.AddWithValue("@Ngaydathang", dtpNgaydat.Value); // Date
-                        cmdUpdateHoaDon.Parameters.AddWithValue("@Noigiaohang", txtNoigiaohang.Text.Trim()); // Delivery address
+                        cmdUpdateHoaDon.Parameters.AddWithValue("@Makhachhang", ccbKhachhang.SelectedValue.ToString().Trim());
+                        cmdUpdateHoaDon.Parameters.AddWithValue("@Manhanvien", cbbNhanvien.SelectedValue.ToString().Trim());
+                        cmdUpdateHoaDon.Parameters.AddWithValue("@Ngaydathang", dtpNgaydat.Value);
+                        cmdUpdateHoaDon.Parameters.AddWithValue("@Noigiaohang", txtNoigiaohang.Text.Trim());
 
-                        // Execute the HoaDon update query
                         int rowsAffectedHoaDon = cmdUpdateHoaDon.ExecuteNonQuery();
-
                         if (rowsAffectedHoaDon <= 0)
                         {
                             MessageBox.Show("Không tìm thấy hóa đơn với mã: " + txtMahoadon.Text);
@@ -429,20 +438,17 @@ namespace BTCK_XML
                         }
                     }
 
-                    // Update query for CTHoaDon table
+                    // Cập nhật thông tin chi tiết hóa đơn
                     string sqlUpdateCTHoaDon = "UPDATE CTHoaDon SET Soluongmua = @Soluongmua " +
-                                               "WHERE Mahoadon = @Mahoadon AND Magaubong = @Magaubong";
+                                                "WHERE Mahoadon = @Mahoadon AND Magaubong = @Magaubong";
 
                     using (var cmdUpdateCTHoaDon = new SqlCommand(sqlUpdateCTHoaDon, connection))
                     {
-                        // Parameters for CTHoaDon update
                         cmdUpdateCTHoaDon.Parameters.AddWithValue("@Mahoadon", txtMahoadon.Text.Trim());
-                        cmdUpdateCTHoaDon.Parameters.AddWithValue("@Magaubong", cbbSanpham.SelectedValue?.ToString().Trim()); // Product ID
-                        cmdUpdateCTHoaDon.Parameters.AddWithValue("@Soluongmua", soluong); // Quantity
+                        cmdUpdateCTHoaDon.Parameters.AddWithValue("@Magaubong", cbbSanpham.SelectedValue?.ToString().Trim());
+                        cmdUpdateCTHoaDon.Parameters.AddWithValue("@Soluongmua", soluong);
 
-                        // Execute the CTHoaDon update query
                         int rowsAffectedCTHoaDon = cmdUpdateCTHoaDon.ExecuteNonQuery();
-
                         if (rowsAffectedCTHoaDon <= 0)
                         {
                             MessageBox.Show("Không tìm thấy chi tiết hóa đơn với mã: " + txtMahoadon.Text);
@@ -450,36 +456,45 @@ namespace BTCK_XML
                         }
                     }
 
-                    // Cập nhật phần tử <Thanhtien> trong XML
-                    string sqlXPath = $"/NewDataSet/HoaDon[Mahoadon='{txtMahoadon.Text.Trim()}']";
-                    XDocument doc = XDocument.Load(fileXML);
-                    var existingHoaDon = doc.Descendants("HoaDon")
-                        .FirstOrDefault(hd => hd.Element("Mahoadon")?.Value == txtMahoadon.Text.Trim());
-
-                    if (existingHoaDon != null)
+                    // Cập nhật phần tử trong XML
+                    try
                     {
-                        // Tìm và cập nhật phần tử <Thanhtien>
-                        var existingThanhtien = existingHoaDon.Element("Thanhtien");
-                        if (existingThanhtien != null)
+                        XDocument doc = XDocument.Load(fileXML);
+                        var existingHoaDon = doc.Descendants("HoaDon")
+                            .FirstOrDefault(hd => hd.Element("Mahoadon")?.Value == txtMahoadon.Text.Trim());
+
+                        if (existingHoaDon != null)
                         {
-                            existingThanhtien.Value = thanhtien.ToString("F2"); // Cập nhật giá trị
+                            // Cập nhật các trường trong XML
+                            existingHoaDon.SetElementValue("Tenkhachhang", ccbKhachhang.Text.Trim());
+                            existingHoaDon.SetElementValue("Tengaubong", cbbSanpham.Text.Trim());
+                            existingHoaDon.SetElementValue("Ngaydathang", dtpNgaydat.Value.ToString("yyyy-MM-ddTHH:mm:ss+07:00")); // Định dạng ngày giờ
+                            existingHoaDon.SetElementValue("Noigiaohang", txtNoigiaohang.Text.Trim());
+                            existingHoaDon.SetElementValue("Soluongmua", soluong);
+                            existingHoaDon.SetElementValue("Thanhtien", thanhtien.ToString("C").Replace("₫", "").Trim());
+                            existingHoaDon.SetElementValue("Tennhanvien", cbbNhanvien.Text.Trim());
+                             // Lưu tổng tiền
+
+                            // Lưu lại tệp XML
+                            doc.Save(fileXML);
                         }
                         else
                         {
-                            // Nếu không có phần tử <Thanhtien>, thêm mới
-                            existingHoaDon.Add(new XElement("Thanhtien", thanhtien.ToString("F2")));
+                            MessageBox.Show("Không tìm thấy hóa đơn trong tệp XML.");
                         }
                     }
+                    catch (Exception xmlEx)
+                    {
+                        MessageBox.Show("Có lỗi xảy ra khi cập nhật tệp XML: " + xmlEx.Message);
+                    }
 
-                    doc.Save(fileXML); // Lưu lại vào tệp XML
-
-                    // If both updates are successful, notify the user
+                    // Thông báo cập nhật thành công
                     MessageBox.Show("Cập nhật thông tin hóa đơn và chi tiết thành công!");
 
-                    // Load updated data into the form or grid
+                    // Tải lại dữ liệu vào form hoặc DataGridView
                     LoadData();
 
-                    // Clear the input fields
+                    // Làm sạch các trường nhập liệu
                     txtMahoadon.Text = "";
                     ccbKhachhang.SelectedIndex = -1;
                     cbbSanpham.SelectedIndex = -1;
